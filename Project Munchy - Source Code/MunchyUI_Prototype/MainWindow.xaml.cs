@@ -1467,13 +1467,20 @@ namespace MunchyUI
             if (LocaleCode == "bg-BG")
             {
                 m_ActiveLanguage = Languages.Bulgarian;
-                tB_RecipeName.Text = m_SuggestedRecipe.BGName.First().ToString().ToUpper() + m_SuggestedRecipe.BGName.Substring(1);
+                if(m_SuggestedRecipe.BGName != null)
+                {
+                    tB_RecipeName.Text = m_SuggestedRecipe.BGName.First().ToString().ToUpper() + m_SuggestedRecipe.BGName.Substring(1);
+                }
+                
             }
 
             if (LocaleCode == "en-US")
             {
                 m_ActiveLanguage = Languages.English;
-                tB_RecipeName.Text = m_SuggestedRecipe.USName.First().ToString().ToUpper() + m_SuggestedRecipe.USName.Substring(1);
+                if(m_SuggestedRecipe.USName!= null)
+                {
+                    tB_RecipeName.Text = m_SuggestedRecipe.USName.First().ToString().ToUpper() + m_SuggestedRecipe.USName.Substring(1);
+                }                
             }
 
             AddInformationToFullRecipeView();
