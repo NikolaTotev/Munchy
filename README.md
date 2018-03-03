@@ -11,6 +11,8 @@ Contents:
 6. MunchyToolSetup - the setup project that is used to export the .exe of the FoodAndRecipeTool
 7. MunchyDataFiles - the files required if you want to help develop the Munchy applicaiton. To use them please go to User > Appdata > Roaming > Create a new folder called "Munchy" and paste in the contentes for the "MunchyDataFiles". Data file updates can be found here : https://github.com/NikolaTotev/MunchyDataFiles
 
+==========================================================================================================================================
+
 Проект за Националната олимпиада по Информационни технологии на Никола Тотев. Номер на прокета 295
 
 Описание: Това репозитори съдържа изходния код и файловете с данни нужни за разрабоката на Прокета "Munchy"
