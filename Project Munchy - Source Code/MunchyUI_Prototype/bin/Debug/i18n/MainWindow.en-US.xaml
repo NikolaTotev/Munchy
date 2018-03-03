@@ -1,0 +1,102 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- ENGLISH RESOURCE FILE -->
+    
+    <!--Front Page-->
+    <sys:String x:Key="ResourceDictionaryName">Loc-en-US</sys:String>
+    <sys:String x:Key="FavouriteRecipesTextBlock">Recently seen</sys:String>
+    <sys:String x:Key="FridgeTextBlock">Fridge</sys:String>
+    <sys:String x:Key="CaloriesTextBlock">Calories</sys:String>
+    <sys:String x:Key="SuggestRecipeButton">Find recipe</sys:String>
+    <sys:String x:Key="DiscoverRecipesButton">Discover</sys:String>
+    <sys:String x:Key="SeeAllFavouriteRecipesButton">See all</sys:String>
+    <sys:String x:Key="ShowRecipeButton">Show recipe</sys:String>
+    <sys:String x:Key="ShowFridgeButton">Show fridge</sys:String>
+    <sys:String x:Key="DietBalanceTextBlock">Diet balance</sys:String>
+    <sys:String x:Key="PreviousRecipeBTN">Previous recipe</sys:String>
+    <sys:String x:Key="NextRecipeBTN">Next recipe</sys:String>
+    <sys:String x:Key="AddFoodBTN">Add</sys:String>
+    <sys:String x:Key="ShoppingList">Shopping list</sys:String>
+
+    <!--Settings Panel-->
+    <sys:String x:Key="SettingsTextBlock">Settings</sys:String>
+    <sys:String x:Key="SexTextBlock">Sex</sys:String>
+    <sys:String x:Key="LanguagePrefTextBlock">Language</sys:String>
+    <sys:String x:Key="FoodPrefTextBlock">Food preferences</sys:String>
+    <sys:String x:Key="HealthIssuesTextBlock">Health issues</sys:String>
+    <sys:String x:Key="AllergiesTextBlock">Allergies</sys:String>
+    <sys:String x:Key="UserNameTextBlock">Name</sys:String>
+    <sys:String x:Key="AgeTextBlock">Age</sys:String>
+    <sys:String x:Key="WeightTextBlock">Weight</sys:String>
+    <sys:String x:Key="VegetarianCB">I'm vegetarian</sys:String>
+    <sys:String x:Key="VeganCB">I'm vegan</sys:String>
+    <sys:String x:Key="DiabeticCB">I'm diabetic</sys:String>
+    <sys:String x:Key="NutsCB">Nuts</sys:String>
+    <sys:String x:Key="SoyCB">Soy</sys:String>
+    <sys:String x:Key="GlutenCB">Gluten</sys:String>
+    <sys:String x:Key="DairyCB">Dairy</sys:String>
+    <sys:String x:Key="FishCB">Fish</sys:String>
+    <sys:String x:Key="EggsCB">Eggs</sys:String>
+    <sys:String x:Key="SaveSettingsButton">Save</sys:String>
+    <sys:String x:Key="MaleRB">Male</sys:String>
+    <sys:String x:Key="FemaleRB">Female</sys:String>
+    <sys:String x:Key="ENCB">English</sys:String>
+    <sys:String x:Key="BGCB">Български</sys:String>
+    <sys:String x:Key="SettingsSavedPopup">Settings saved!</sys:String>
+
+
+    <!--Full Recipe View Panel-->
+    <sys:String x:Key="TimeToCookTextBlock">Time to cook</sys:String>
+    <sys:String x:Key="IngredientsTextBlock">Ingredients</sys:String>
+    <sys:String x:Key="DirectionsTextBlock">Directions</sys:String>
+    <sys:String x:Key="CookItButton">I'll cook it!</sys:String>
+    <sys:String x:Key="SaveRecipeButton">Save</sys:String>
+    <sys:String x:Key="AddedToSavedRecipesPopup">Recipe saved!</sys:String>
+    <sys:String x:Key="AddedToCookedRecipesPopup">Enjoy!</sys:String>
+
+
+
+    <!--Fridge Panel-->
+    <sys:String x:Key="CaloriesTB">Calories</sys:String>
+    <sys:String x:Key="ProteinTB">Protein</sys:String>
+    <sys:String x:Key="FatTB">Fat</sys:String>
+    <sys:String x:Key="CarbsTB">Carbs</sys:String>
+    <sys:String x:Key="SugarTB">Sugar</sys:String>
+    <sys:String x:Key="SodiumTB">Sodium</sys:String>
+    <sys:String x:Key="SearchButton">Search</sys:String>
+    <sys:String x:Key="RemoveButton">Remove</sys:String>
+    <sys:String x:Key="CloseAddFoodButton">Close</sys:String>
+    <sys:String x:Key="SummaryTB">Summary</sys:String>
+    <sys:String x:Key="FoodInfoTB">Food Info</sys:String>
+    <sys:String x:Key="FoodsTB">Foods</sys:String>
+
+    <!--Saved Recipes Panel-->
+    <sys:String x:Key="CookedRecipeBTN">CookedRecipes</sys:String>
+    <sys:String x:Key="RecentlyViewedBTN">Recently viewed</sys:String>
+    <sys:String x:Key="SavedBTN">Saved recipes</sys:String>
+    <sys:String x:Key="StatsTB">Statistics</sys:String>
+    <sys:String x:Key="TotalCaloriesTB">Total calories consumed</sys:String>
+    <sys:String x:Key="AverageDailyCaloriesTB">Average daily calories</sys:String>
+    <sys:String x:Key="AverageMonthlyCaloriesTB">Average monthly calories</sys:String>
+    <sys:String x:Key="RecipesCookedTB">Recipes cooked</sys:String>
+    <sys:String x:Key="RecipesSeenTB">Recipes seen</sys:String>
+    <sys:String x:Key="DoubleClickOnRecipePrompt">Double click to open recipe.</sys:String>
+
+    <sys:String x:Key="IngredientListIngredients">Ingredients</sys:String>
+    <sys:String x:Key="IngredientListAmounts">Amounts</sys:String>
+
+    <!--Tool tips-->
+    <sys:String x:Key="FridgeToolTip">Here you will see recently added foods.</sys:String>
+    <sys:String x:Key="BTNShowFridgeToolTip">Click here to open fridge.</sys:String>
+    <sys:String x:Key="BTNShowRecipeToolTip">Click here to see how to cook recipe.</sys:String>
+    <sys:String x:Key="BTNShowRecentlyViewedToolTip">Click here to see saved and recently viewed recipes.</sys:String>
+    <sys:String x:Key="OpenSettingsToolTip">Click to open your account settings.</sys:String>
+    <sys:String x:Key="BTNFindRecipeToolTip">Click to refresh suggested recipes.</sys:String>
+    <sys:String x:Key="BGButtonToolTip">Click to change language to Bulgarian.</sys:String>
+    <sys:String x:Key="USButtonToolTip">Click to change language to English.</sys:String>
+    <sys:String x:Key="LangSettingsToolTip">Click to change language.</sys:String>
+    <sys:String x:Key="Discover feature">Feature coming soon!</sys:String>
+
+</ResourceDictionary>

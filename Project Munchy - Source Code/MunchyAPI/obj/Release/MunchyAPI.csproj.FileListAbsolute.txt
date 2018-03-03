@@ -1,0 +1,8 @@
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\bin\Release\MunchyAPI.dll
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\bin\Release\MunchyAPI.pdb
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\bin\Release\Newtonsoft.Json.dll
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\bin\Release\Newtonsoft.Json.xml
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\obj\Release\MunchyAPI.csprojResolveAssemblyReference.cache
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\obj\Release\MunchyAPI.csproj.CoreCompileInputs.cache
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\obj\Release\MunchyAPI.dll
+D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\obj\Release\MunchyAPI.pdb

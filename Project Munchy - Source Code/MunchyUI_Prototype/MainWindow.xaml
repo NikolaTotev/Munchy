@@ -1,0 +1,1491 @@
+﻿<Window x:Name="window" x:Class="MunchyUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MunchyUI"
+        mc:Ignorable="d"
+        Title="Munchy" Height="550" Width="900" WindowStartupLocation="CenterScreen" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="900" MinHeight="550" Background="#FFF7F4F3">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="i18n/MainWindow.en-US.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Storyboard x:Key="SettingsCloseOpacityUP">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseSettings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="SettingsCloseOpacityDOWN">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseSettings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.3"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.3"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="OpenLangSettings">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="276"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseLangSettings">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="184"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="2"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="OpenSettings">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_Settings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.995"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_Settings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="589.5"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseSettings">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_Settings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="560"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="9.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_Settings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="OpenUserFridge">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_UserFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_UserFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-1016.385"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_UserFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.661"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SummaryTB">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TB_FoodInfo">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_CalorieSummary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock2">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_ProteinSummary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock3">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FatSummary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock4">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_CarbsSummary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock5">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_SugarSumary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock6">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_SodiumSummary">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tb_FoodName">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock7">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tb_FoodItemCalorie">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock8">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodProtein">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock9">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodFat">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock10">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodCarbs">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock11">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodSugar">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock12">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodSodium">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseFridge">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_UserFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-928.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="7.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="SummaryTB">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TB_FoodInfo">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock1">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_CalorieSummary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock2">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_ProteinSummary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock3">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FatSummary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock4">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_CarbsSummary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock5">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_SugarSumary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock6">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_SodiumSummary">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tb_FoodName">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock7">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tb_FoodItemCalorie">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock8">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodProtein">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock9">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodFat">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock10">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodCarbs">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock11">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodSugar">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock12">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="tB_FoodSodium">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_UserFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="OpenFoodSearch">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-482.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-2"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-2"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseFoodSearch">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-484"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_AddFoodItemPanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-2"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="OpenFoodAmountPanel">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="P_AddFoodAmount">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="P_AddFoodAmount">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="273.292"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="P_AddFoodAmount">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-0.75"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-0.352"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="P_AddFoodAmount">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1.002"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowFullRecipeView">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_FullRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_FullRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-599"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseFullRecipeView">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="p_FullRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-546.333"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="8.667"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_FullRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowSavedRecipePanel">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="987.998"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_CookedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="268.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_RecentlyViewed">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="268.5"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="269.047"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_CookedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_RecentlyViewed">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Btn_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="2"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="3.072"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="FridgeCloseOpacityUP">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="FridgeCloseOpacityDOWN">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseFoods">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="FullRecipeCloseOpacityUP">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="FullRecipeCloseOpacityDOWN">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="btn_CloseRecipeView">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="LangPanelCloseOpacityUP">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_CloseLangSettings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="LangPanelCloseOpacityDOWN">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_CloseLangSettings">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="SaveRecipePanelCloseOpacityUP">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_CloseSavedRecipePanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="SaveRecipePanelCloseOpacityDOWN">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Btn_CloseSavedRecipePanel">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowSettingsSavedInfo">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Tb_SettingsSavedInfo">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="31.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.25"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1.25"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:2" Value="30.315"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Tb_SettingsSavedInfo">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="AddToCookedPrompt">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Tb_AddedToCookedRecipesInfo">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="31"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-29"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="-29"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="30"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Tb_AddedToCookedRecipesInfo">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.5" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowRecipeSavedPrompt">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Tb_AddedToCookedRecipesInfo_Copy">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Tb_AddedToCookedRecipesInfo_Copy">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-27"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="-27"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.4" Value="2"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseSavedRecipePanel">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="p_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="988"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-10"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_CookedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="268"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_RecentlyViewed">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="268"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Btn_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="268"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="p_SavedRecipes">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="StartPanelClose">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="StartPanelMunchy">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="StartPanelMunchy">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-1162.197"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-1162.197"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="-10.697"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="StartPanelMunchy">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.2" Value="0.2"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_1_Show">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_1">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.002"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.45"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_1_Close">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_1">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_2_Show">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_2">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.45"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_2_Close">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_2">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_3_Show">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_3">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.45"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_3_Close">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_3">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_4_Show">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_4">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.45"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_4_Close">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_4">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_5_Show">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_5">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.45"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Highlight_5_Close">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FrontHighlight_5">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0.45"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowSettingsHighlight">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="8.75"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseSettingsHighlight">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="8.016"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-0.501"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_1_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_1">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_1_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_1">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_2_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_2">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_2_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_2">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_3_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_3">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_3_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_3">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_4_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_4">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_4_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_4">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_5_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_5">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_5_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_5">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_6_Show">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_6">
+                    <EasingColorKeyFrame KeyTime="0" Value="#005E6973"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF4392F1"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="RV_BorderHighlight_6_Hide">
+                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="Img_RecentlyViewed_6">
+                    <EasingColorKeyFrame KeyTime="0" Value="#FF4392F1"/>
+                    <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#005E6973"/>
+                </ColorAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowShoppingList">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="P_ShoppingList">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-1036"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-1366.675"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="P_ShoppingList">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.5"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="CloseShoppingList">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="P_ShoppingList">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="-1366.426"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-968.426"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="P_ShoppingList">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1.108"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="P_ShoppingList">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="btn_CloseSettings">
+            <BeginStoryboard x:Name="SettingsCloseOpacityUP_BeginStoryboard" Storyboard="{StaticResource SettingsCloseOpacityUP}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="btn_CloseRecipeView">
+            <BeginStoryboard x:Name="FullRecipeCloseOpacityUP_BeginStoryboard" Storyboard="{StaticResource FullRecipeCloseOpacityUP}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="btn_CloseRecipeView">
+            <BeginStoryboard x:Name="FullRecipeCloseOpacityDOWN_BeginStoryboard" Storyboard="{StaticResource FullRecipeCloseOpacityDOWN}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Btn_CloseLangSettings">
+            <BeginStoryboard x:Name="LangPanelCloseOpacityUP_BeginStoryboard" Storyboard="{StaticResource LangPanelCloseOpacityUP}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Btn_CloseLangSettings">
+            <BeginStoryboard x:Name="LangPanelCloseOpacityDOWN_BeginStoryboard" Storyboard="{StaticResource LangPanelCloseOpacityDOWN}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Btn_CloseSavedRecipePanel">
+            <BeginStoryboard x:Name="LangPanelCloseOpacityUP_BeginStoryboard2" Storyboard="{StaticResource SaveRecipePanelCloseOpacityUP}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Btn_CloseSavedRecipePanel">
+            <BeginStoryboard x:Name="SaveRecipePanelCloseOpacityDOWN_BeginStoryboard" Storyboard="{StaticResource SaveRecipePanelCloseOpacityDOWN}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="btn_CloseFoods">
+            <BeginStoryboard x:Name="FridgeCloseOpacityUP_BeginStoryboard" Storyboard="{StaticResource FridgeCloseOpacityUP}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="btn_CloseFoods">
+            <BeginStoryboard x:Name="FridgeCloseOpacityDOWN_BeginStoryboard" Storyboard="{StaticResource FridgeCloseOpacityDOWN}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="btn_CloseSettings">
+            <BeginStoryboard Storyboard="{StaticResource SettingsCloseOpacityDOWN}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_OpenLanguageSettings">
+            <BeginStoryboard Storyboard="{StaticResource OpenLangSettings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_CloseLangSettings">
+            <BeginStoryboard Storyboard="{StaticResource CloseLangSettings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="tB_UserName">
+            <BeginStoryboard x:Name="OpenSettings_BeginStoryboard" Storyboard="{StaticResource OpenSettings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Elip_OpenSettings">
+            <BeginStoryboard x:Name="CloseSettings_BeginStoryboard1" Storyboard="{StaticResource OpenSettings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="btn_CloseSettings">
+            <BeginStoryboard Storyboard="{StaticResource CloseSettings}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_Showfridge">
+            <BeginStoryboard Storyboard="{StaticResource OpenUserFridge}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="btn_CloseFoods">
+            <BeginStoryboard Storyboard="{StaticResource CloseFridge}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_SearchFoods">
+            <BeginStoryboard Storyboard="{StaticResource OpenFoodSearch}"/>
+            <BeginStoryboard x:Name="OpenFoodAmountPanel_BeginStoryboard" Storyboard="{StaticResource OpenFoodAmountPanel}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_Close">
+            <BeginStoryboard Storyboard="{StaticResource CloseFoodSearch}"/>
+            <StopStoryboard BeginStoryboardName="OpenFoodAmountPanel_BeginStoryboard"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_ShowRecipe">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard1" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="btn_CloseRecipeView">
+            <BeginStoryboard x:Name="SettingsCloseOpacityUP_BeginStoryboard1" Storyboard="{StaticResource CloseFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_SeeAllSavedRecipes">
+            <BeginStoryboard x:Name="ShowSavedRecipePanel_BeginStoryboard1" Storyboard="{StaticResource ShowSavedRecipePanel}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Btn_CloseSavedRecipePanel">
+            <BeginStoryboard x:Name="ShowSavedRecipePanel_BeginStoryboard2" Storyboard="{StaticResource CloseSavedRecipePanel}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_Save">
+            <BeginStoryboard x:Name="ShowSettingsSavedInfo_BeginStoryboard1" Storyboard="{StaticResource ShowSettingsSavedInfo}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_RecipeWillBeCooked">
+            <BeginStoryboard x:Name="AddToCookedPrompt_BeginStoryboard1" Storyboard="{StaticResource AddToCookedPrompt}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BTN_AddToSavedRecipes">
+            <BeginStoryboard x:Name="ShowRecipeSavedPrompt_BeginStoryboard1" Storyboard="{StaticResource ShowRecipeSavedPrompt}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Img_FrontRecentlyViewed_1">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard2" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Img_FrontRecentlyViewed_2">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard3" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Img_FrontRecentlyViewed_4">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard4" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Img_FrontRecentlyViewed_5">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard5" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseUp" SourceName="Img_FrontRecentlyViewed_3">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard6" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_FrontRecentlyViewed_1">
+            <BeginStoryboard x:Name="Highlight_1_Show_BeginStoryboard1" Storyboard="{StaticResource Highlight_1_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_FrontRecentlyViewed_1">
+            <BeginStoryboard x:Name="Highlight_1_Close_BeginStoryboard1" Storyboard="{StaticResource Highlight_1_Close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_FrontRecentlyViewed_2">
+            <BeginStoryboard x:Name="Highlight_2_Show_BeginStoryboard1" Storyboard="{StaticResource Highlight_2_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_FrontRecentlyViewed_2">
+            <BeginStoryboard x:Name="Highlight_2_Close_BeginStoryboard1" Storyboard="{StaticResource Highlight_2_Close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_FrontRecentlyViewed_3">
+            <BeginStoryboard x:Name="Highlight_3_Show_BeginStoryboard1" Storyboard="{StaticResource Highlight_3_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_FrontRecentlyViewed_3">
+            <BeginStoryboard x:Name="Highlight_3_Close_BeginStoryboard1" Storyboard="{StaticResource Highlight_3_Close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_FrontRecentlyViewed_4">
+            <BeginStoryboard x:Name="Highlight_4_Show_BeginStoryboard1" Storyboard="{StaticResource Highlight_4_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_FrontRecentlyViewed_4">
+            <BeginStoryboard x:Name="Highlight_4_Close_BeginStoryboard1" Storyboard="{StaticResource Highlight_4_Close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_FrontRecentlyViewed_5">
+            <BeginStoryboard x:Name="Highlight_5_Show_BeginStoryboard1" Storyboard="{StaticResource Highlight_5_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_FrontRecentlyViewed_5">
+            <BeginStoryboard x:Name="Highlight_5_Close_BeginStoryboard1" Storyboard="{StaticResource Highlight_5_Close}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Elip_OpenSettings">
+            <BeginStoryboard x:Name="ShowSettingsHighlight_BeginStoryboard1" Storyboard="{StaticResource ShowSettingsHighlight}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Elip_OpenSettings">
+            <BeginStoryboard x:Name="CloseSettingsHighlight_BeginStoryboard1" Storyboard="{StaticResource CloseSettingsHighlight}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="tB_UserName">
+            <BeginStoryboard x:Name="ShowSettingsHighlight_BeginStoryboard2" Storyboard="{StaticResource ShowSettingsHighlight}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="tB_UserName">
+            <BeginStoryboard x:Name="CloseSettingsHighlight_BeginStoryboard2" Storyboard="{StaticResource CloseSettingsHighlight}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Control.MouseDoubleClick" SourceName="lb_ListOfCookedRecipes">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard8" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="Control.MouseDoubleClick" SourceName="lb_SavedRecipesList">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard7" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_1">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard9" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_2">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard10" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_3">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard11" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_4">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard12" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_5">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard13" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseDown" SourceName="Img_RecentlyViewed_6">
+            <BeginStoryboard x:Name="ShowFullRecipeView_BeginStoryboard14" Storyboard="{StaticResource ShowFullRecipeView}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_1">
+            <BeginStoryboard x:Name="RV_BorderHighlight_1_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_1_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_1">
+            <BeginStoryboard x:Name="RV_BorderHighlight_1_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_1_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_2">
+            <BeginStoryboard x:Name="RV_BorderHighlight_2_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_2_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_2">
+            <BeginStoryboard x:Name="RV_BorderHighlight_2_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_2_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_3">
+            <BeginStoryboard x:Name="RV_BorderHighlight_3_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_3_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_3">
+            <BeginStoryboard x:Name="RV_BorderHighlight_3_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_3_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_4">
+            <BeginStoryboard x:Name="RV_BorderHighlight_4_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_4_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_4">
+            <BeginStoryboard x:Name="RV_BorderHighlight_4_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_4_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_5">
+            <BeginStoryboard x:Name="RV_BorderHighlight_5_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_5_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_5">
+            <BeginStoryboard x:Name="RV_BorderHighlight_5_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_5_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="Img_RecentlyViewed_6">
+            <BeginStoryboard x:Name="RV_BorderHighlight_6_Show_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_6_Show}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="Img_RecentlyViewed_6">
+            <BeginStoryboard x:Name="RV_BorderHighlight_6_Hide_BeginStoryboard1" Storyboard="{StaticResource RV_BorderHighlight_6_Hide}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="StartPanelClose_BeginStoryboard1" Storyboard="{StaticResource StartPanelClose}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_OpenShoppingCart">
+            <BeginStoryboard x:Name="ShowShoppingList_BeginStoryboard1" Storyboard="{StaticResource ShowShoppingList}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_CloseShoppingList">
+            <BeginStoryboard x:Name="CloseShoppingList_BeginStoryboard1" Storyboard="{StaticResource CloseShoppingList}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Viewbox>
+        <Grid ShowGridLines="False" UseLayoutRounding="True" MinWidth="400" MinHeight="350" ScrollViewer.CanContentScroll="True" VerticalAlignment="Center" HorizontalAlignment="Center" Height="536" Width="924" Background="#FFF7F4F3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="28*"/>
+                <RowDefinition Height="154*"/>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="34*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="257"/>
+                <ColumnDefinition Width="427*"/>
+                <ColumnDefinition Width="240*"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Btn_OpenShoppingCart" Content="" Grid.Column="3" HorizontalAlignment="Left" Height="41" Margin="93,17,0,0" VerticalAlignment="Top" Width="41" Foreground="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Btn_OpenShoppingCart_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border
+                                    x:Name="border"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="0"
+                                    TextBlock.Foreground="Black">
+                                        <Grid>
+                                            <Image
+                                            x:Name="buttonImage"
+                                            Source="Images/ic_shopping_cart_black_48dp_2x.png"
+                                            Stretch="UniformToFill" />
+                                            <ContentPresenter
+                                            Margin="{TemplateBinding Padding}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="buttonImage" Property="Source" Value="Images/ic_add_shopping_cart_black_48dp_2x.png" />
+
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="border" Property="Background" Value="#594392F1" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Ellipse x:Name="ellipse" Grid.Column="2" Fill="#FF4392F1" HorizontalAlignment="Left" Height="32" Margin="196,17,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+
+            <Grid Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="294" Margin="15,12,0,0" Grid.Row="2" VerticalAlignment="Top" Width="246">
+                <Ellipse x:Name="FrontHighlight_1" Fill="#FF4392F1" HorizontalAlignment="Left" Height="90" Margin="5,15,0,0" VerticalAlignment="Top" Width="90" Opacity="0"/>
+                <Ellipse x:Name="FrontHighlight_2" Fill="#FF4392F1" HorizontalAlignment="Left" Height="90" Margin="148,15,0,0" VerticalAlignment="Top" Width="90" Opacity="0"/>
+                <Ellipse x:Name="FrontHighlight_3" Fill="#FF4392F1" HorizontalAlignment="Left" Height="90" Margin="74,95,0,0" VerticalAlignment="Top" Width="90" Opacity="0"/>
+                <Ellipse x:Name="FrontHighlight_4" Fill="#FF4392F1" HorizontalAlignment="Left" Height="90" Margin="0,175,0,0" VerticalAlignment="Top" Width="90" Opacity="0"/>
+                <Ellipse x:Name="FrontHighlight_5" Fill="#FF4392F1" HorizontalAlignment="Left" Height="90" Margin="148,175,0,0" VerticalAlignment="Top" Width="90" Opacity="0"/>
+                <Ellipse x:Name="Img_FrontRecentlyViewed_3" Height="80" Margin="79,100,0,114" Width="80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" MouseDown="ShowRecentlyViewedRecipe"/>
+                <Ellipse x:Name="Img_FrontRecentlyViewed_5" Height="80" Margin="153,180,0,34" Width="80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" MouseDown="ShowRecentlyViewedRecipe"/>
+                <Ellipse x:Name="Img_FrontRecentlyViewed_4" Height="80" Margin="5,180,0,34" Width="80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" MouseDown="ShowRecentlyViewedRecipe"/>
+                <Ellipse x:Name="Img_FrontRecentlyViewed_2" Height="80" Margin="153,20,0,194" Width="80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" MouseDown="ShowRecentlyViewedRecipe"/>
+                <Ellipse x:Name="Img_FrontRecentlyViewed_1" Height="80" Margin="10,20,0,194" Width="80" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="White" MouseDown="ShowRecentlyViewedRecipe"/>
+            </Grid>
+
+            <Ellipse Grid.Column="2" Fill="#FF4392F1" HorizontalAlignment="Left" Height="29" Margin="197,25,0,0" VerticalAlignment="Top" Width="30"/>
+
+            <Rectangle x:Name="Rect_DietBalBackground" Fill="#FFF24333" HorizontalAlignment="Left" Height="75" Margin="58,-1,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="125" Grid.Column="3" Visibility="Hidden"/>
+
+            <Rectangle x:Name="Rect_CalorieBackground" Grid.ColumnSpan="2" Fill="#FFF24333" HorizontalAlignment="Left" Height="75" Margin="59,-1,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="125" Visibility="Hidden"/>
+
+            <Button x:Name="Btn_Discover" Content="{DynamicResource ResourceKey=DiscoverRecipesButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Grid.Column="2" Margin="215,10,0,0" Grid.Row="1" Height="36" BorderBrush="{x:Null}" Foreground="#FFFCFFFC" FontSize="18" FontFamily="Roboto Black" Click="Btn_DiscoverClick" Background="#FF4392F1" OpacityMask="#FFF24333" ToolTip="Feature coming soon!"/>
+
+            <Button x:Name="Btn_ShowPreviousRecipe" Content="&lt;" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="93,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="45" Click="Btn_ShowPreviousRecipe_Click" FontSize="22" FontFamily="Roboto Black" Background="{x:Null}" BorderBrush="{x:Null}"/>
+
+            <Button x:Name="Btn_ShowNextRecipe" Content="&gt;" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="306,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="39" Click="Btn_ShowNextRecipe_Click" FontFamily="Roboto Black" FontSize="22" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Click to see next recipe"/>
+
+            <Rectangle x:Name="Rect_UNameBackground" Fill="#FF4392F1" Margin="85,-1,84,26" Grid.Column="2" OpacityMask="#FFF24333" StrokeThickness="5"/>
+            <Ellipse x:Name="Elip_OpenSettings" Grid.Column="2" HorizontalAlignment="Left" Height="16" Margin="204,36,0,0" VerticalAlignment="Top" Width="16" MouseDown="ShowSettings" ToolTip="{DynamicResource ResourceKey=OpenSettingsToolTip}" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="Images/ic_settings_white_48dp_2x.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <Ellipse x:Name="Img_SuggestedRecipeImage" Height="250" Margin="90,24,87,34" Width="250" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Fill="White" Stretch="Uniform"/>
+            <TextBlock x:Name="TB_Calories" TextWrapping="Wrap" Margin="59,11,0,0" Height="26" Width="173" FontFamily="Roboto Medium" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Foreground="#FF5E6973" TextAlignment="Center"><Run Text="{DynamicResource ResourceKey=CaloriesTextBlock}"/><LineBreak/><Run/></TextBlock>
+            <TextBlock  x:Name="TB_DietBalance"  TextWrapping="Wrap" Margin="0,11,10,29" Width="220" FontFamily="Roboto Medium" FontSize="20" Text="{DynamicResource ResourceKey=DietBalanceTextBlock}" HorizontalAlignment="Right" Grid.Column="3" Foreground="#FF5E6973" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="L_DailyCalories" Height="25" Margin="107,33,0,0" TextWrapping="Wrap" Text="1500" Width="76" TextAlignment="Center" FontFamily="Roboto Light" FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Foreground="#FF5E6973"/>
+            <TextBlock x:Name="TB_DietBalanceValue" Margin="0,41,80,0" TextWrapping="Wrap" Text="Coming soon!" Width="81" TextAlignment="Center" FontFamily="Roboto" HorizontalAlignment="Right" Grid.Column="3" Foreground="#FF5E6973" Visibility="Hidden"/>
+            <TextBlock x:Name="l_FavouriteRecipes" Height="41" Margin="10,15,0,0" TextWrapping="Wrap" Width="246" TextAlignment="Center" FontFamily="Roboto Black" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Foreground="#FF5E6973"><Run Text="{DynamicResource ResourceKey=FavouriteRecipesTextBlock}"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="l_Fridge" Height="41" Margin="0,14,10,1" TextWrapping="Wrap" Width="240" TextAlignment="Center" FontFamily="Roboto Black" FontSize="26" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Foreground="#FF5E6973" Grid.ColumnSpan="2"><Run Text="{DynamicResource ResourceKey=FridgeTextBlock}"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="tB_UserName" Margin="85,3,88,26" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Shrikhand" FontSize="24" Grid.Column="2" Foreground="#FFFCFFFC" MouseDown="ShowSettings" ToolTip="{DynamicResource ResourceKey=OpenSettingsToolTip}"/>
+            <TextBlock x:Name="tB_RecipeName" Height="48" Margin="4.5,0,4.5,63" TextWrapping="Wrap" Width="418" TextAlignment="Center" FontFamily="Shrikhand" FontSize="24" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" Foreground="#FF5E6973" Grid.RowSpan="3" Text="Potato Pancake"/>
+            <Button x:Name="btn_SeeAllSavedRecipes" Content="{DynamicResource ResourceKey=SeeAllFavouriteRecipesButton}" Height="38" Margin="42,0,0,67" Width="181" FontFamily="Roboto Black" FontSize="18" Foreground="#FFFCFFFC" BorderBrush="{x:Null}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Click="Btn_SeeAllSavedRecipes_Click" Background="#FF4392F1" ToolTip="{DynamicResource ResourceKey=BTNShowRecentlyViewedToolTip}"/>
+            <ListBox x:Name="lb_Fridge" Height="288" Margin="0,10,36,10" Width="181" Background="White" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="3" Grid.Row="2" FontSize="18" FontFamily="Roboto" Foreground="#FF223843" BorderBrush="#FF5E6973" ToolTip="{DynamicResource ResourceKey=FridgeToolTip}"/>
+            <Button x:Name="Btn_SuggestRecipe_Click" Content="{DynamicResource ResourceKey=SuggestRecipeButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Grid.Column="2" Margin="54,10,0,0" Grid.Row="1" Height="36" BorderBrush="{x:Null}" Foreground="#FFFCFFFC" FontSize="18" FontFamily="Roboto Black" Click="Btn_FindRecipe_Click" Background="#FF4392F1" OpacityMask="#FFF24333" ToolTip="{DynamicResource ResourceKey=BTNFindRecipeToolTip}"/>
+            <Button x:Name="btn_ShowRecipe" Content="{DynamicResource ResourceKey=ShowRecipeButton}" Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="139,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="168" BorderBrush="{x:Null}" Foreground="#FFFCFFFC" FontFamily="Roboto Black" FontSize="18" Click="Btn_ShowRecipе" Background="#FF4392F1" ToolTip="{DynamicResource ResourceKey=BTNShowRecipeToolTip}"/>
+            <Button x:Name="btn_Showfridge" Content="{DynamicResource ResourceKey=ShowFridgeButton}" Grid.Column="3" HorizontalAlignment="Left" Height="38" Margin="23,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="181" BorderBrush="{x:Null}" FontFamily="Roboto Black" FontSize="18" Foreground="#FFFCFFFC" Click="Btn_Showfridge_Click" Background="#FF4392F1" ToolTip="{DynamicResource ResourceKey=BTNShowFridgeToolTip}"/>
+            <Grid x:Name="p_Settings" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="537" VerticalAlignment="Top" Width="924" Background="#FFF7F4F3" Margin="0,-590,0,0" RenderTransformOrigin="0.5,0.5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="67*"/>
+                    <ColumnDefinition Width="164*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <TextBlock x:Name="Tb_SettingsSavedInfo" HorizontalAlignment="Left" Height="29" Margin="112.709,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontFamily="Roboto Medium" TextAlignment="Center" FontSize="16" Foreground="#FF5E6973" RenderTransformOrigin="0.5,0.5" Opacity="0" Grid.Column="1">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform><Run Text="{DynamicResource ResourceKey=SettingsSavedPopup}"/><LineBreak/><Run/></TextBlock>
+
+                <Rectangle x:Name="btn_CloseSettings" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="38" MouseDown="ShowSettings" Margin="607.709,10,0,0" OpacityMask="Black" RenderTransformOrigin="0.5,0.5" Opacity="0.5" Grid.Column="1">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock x:Name="tB_SettingsTitle" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SettingsTextBlock}" VerticalAlignment="Top" Width="551" FontSize="48" FontFamily="Shrikhand" TextAlignment="Center" Foreground="#FF5E6973" Margin="199,2,0,0" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="cb_Vegan" Content="{DynamicResource ResourceKey=VeganCB}" HorizontalAlignment="Left" Height="30" Margin="109,384,0,0" VerticalAlignment="Top" Width="127" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" BorderBrush="#FF5E6973"/>
+                <CheckBox x:Name="cb_Vegetarian" Content="{DynamicResource ResourceKey=VegetarianCB}" HorizontalAlignment="Left" Height="30" Margin="109,333,0,0" VerticalAlignment="Top" Width="184" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="cb_Diabetic" Content="{DynamicResource ResourceKey=DiabeticCB}" HorizontalAlignment="Left" Height="26" Margin="140,334,0,0" VerticalAlignment="Top" Width="153" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <CheckBox x:Name="cb_Nuts" Content="{DynamicResource ResourceKey=NutsCB}" HorizontalAlignment="Left" Height="26" Margin="378,334,0,0" VerticalAlignment="Top" Width="77" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <CheckBox x:Name="cb_Soy" Content="{DynamicResource ResourceKey=SoyCB}" HorizontalAlignment="Left" Height="26" Margin="482,334,0,0" VerticalAlignment="Top" Width="77" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.497,0.828"/>
+                <CheckBox x:Name="cb_Gluten" Content="{DynamicResource ResourceKey=GlutenCB}" HorizontalAlignment="Left" Height="26" Margin="377.709,418,0,0" VerticalAlignment="Top" Width="96" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <CheckBox x:Name="cb_Dairy" Content="{DynamicResource ResourceKey=DairyCB}" HorizontalAlignment="Left" Height="34" Margin="377.709,372,0,0" VerticalAlignment="Top" Width="92" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <CheckBox x:Name="cb_Fish" Content="{DynamicResource ResourceKey=FishCB}" HorizontalAlignment="Left" Height="26" Margin="482,375,0,0" VerticalAlignment="Top" Width="77" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <CheckBox x:Name="cb_Eggs" Content="{DynamicResource ResourceKey=EggsCB}" HorizontalAlignment="Left" Height="30" Margin="481.709,418,0,0" VerticalAlignment="Top" Width="96" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" RenderTransformOrigin="0.597,0.571" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <TextBlock x:Name="tB_AllergiesLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AllergiesTextBlock}" VerticalAlignment="Top" Width="144" FontSize="26" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="397,286,0,0" Grid.Column="1"/>
+                <TextBlock x:Name="tB_FoodPrefLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=FoodPrefTextBlock}" VerticalAlignment="Top" Width="220" FontSize="26" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="87,286,0,0" Grid.ColumnSpan="2"/>
+                <TextBlock x:Name="tB_HealthIssuesLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=HealthIssuesTextBlock}" VerticalAlignment="Top" Width="336" FontSize="26" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="38.709,286,0,0" Grid.Column="1"/>
+                <TextBlock x:Name="tB_NameLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=UserNameTextBlock}" VerticalAlignment="Top" Width="103" FontSize="24" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="35,110,0,0"/>
+                <TextBlock x:Name="tB_AgeLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AgeTextBlock}" VerticalAlignment="Top" Width="144" FontSize="24" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="33,110,0,0" Grid.Column="1"/>
+                <TextBlock x:Name="tB_WeightLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=WeightTextBlock}" VerticalAlignment="Top" Width="144" FontSize="24" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="321,110,0,0" Grid.Column="1"/>
+                <TextBlock x:Name="tB_SexLabel" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SexTextBlock}" VerticalAlignment="Top" Width="144" FontSize="26" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="350,170,0,0" Grid.Column="1"/>
+                <TextBox x:Name="tb_NameInput" HorizontalAlignment="Left" Height="36" Margin="144,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="#FF5E6973" SelectionBrush="#7F4392F1" Background="White" TextAlignment="Center" FontFamily="Roboto Medium" FontSize="20" BorderBrush="#FF4392F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="tb_AgeInput" HorizontalAlignment="Left" Height="36" Margin="157,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="#FF5E6973" SelectionBrush="#7F4392F1" Background="White" TextAlignment="Center" FontFamily="Roboto Medium" FontSize="20" BorderBrush="#FF4392F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <TextBox x:Name="tb_WeightInput" HorizontalAlignment="Left" Height="36" Margin="447,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="#FF5E6973" SelectionBrush="#7F4392F1" Background="White" TextAlignment="Center" FontFamily="Roboto Medium" FontSize="20" BorderBrush="#FF4392F1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <Button x:Name="btn_Save" Content="{DynamicResource ResourceKey=SaveSettingsButton}" HorizontalAlignment="Left" Height="42" Margin="112.709,485,0,0" VerticalAlignment="Top" Width="180" FontFamily="Roboto Black" FontSize="24" Foreground="#FFFCFFFC" Click="Btn_Save_Click" Background="#FF4392F1" BorderBrush="{x:Null}" Grid.Column="1"/>
+                <RadioButton x:Name="rb_Male" Content="{DynamicResource ResourceKey=MaleRB}" HorizontalAlignment="Left" Height="23" Margin="321.709,213,0,0" VerticalAlignment="Top" Width="80" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <RadioButton x:Name="rb_Female" Content="{DynamicResource ResourceKey=FemaleRB}" HorizontalAlignment="Left" Height="28" Margin="425,208,0,0" VerticalAlignment="Top" Width="102" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" VerticalContentAlignment="Center" Grid.Column="1"/>
+                <TextBlock x:Name="Tb_LanguagePref" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=LanguagePrefTextBlock}" VerticalAlignment="Top" Width="220" FontSize="26" FontFamily="Roboto Medium" TextAlignment="Center" Foreground="#FF5E6973" Margin="87,170,0,0" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="CB_English" Content="{DynamicResource ResourceKey=ENCB}" HorizontalAlignment="Left" Height="30" Margin="75,211,0,0" VerticalAlignment="Top" Width="119" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" Checked="UncheckBulgarian" VerticalContentAlignment="Center"/>
+                <CheckBox x:Name="CB_Bulgarian" Content="{DynamicResource ResourceKey=BGCB}" HorizontalAlignment="Left" Height="30" Margin="199,212,0,0" VerticalAlignment="Top" Width="157" FontFamily="Roboto Light" FontSize="24" Background="White" Foreground="#FF5E6973" Checked="UncheckEnglish" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="607,115,0,0" TextWrapping="Wrap" Text="KG" VerticalAlignment="Top" Width="21" FontFamily="Roboto Medium" FontSize="14" Foreground="#FF5E6973"/>
+
+            </Grid>
+            <Grid x:Name="p_SavedRecipes" HorizontalAlignment="Left" Height="537" Grid.RowSpan="5" VerticalAlignment="Top" Width="924" Background="#FFF7F4F3" Margin="-988,-1,0,0" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <TextBlock x:Name="tB_SavedRecipesPanelTitle" Height="60" TextWrapping="Wrap" Text="Saved Recipes" VerticalAlignment="Top" Margin="211,14,241,0" FontFamily="Shrikhand" FontSize="36" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <Button x:Name="Btn_CookedRecipes" Content="{DynamicResource ResourceKey=CookedRecipeBTN}" HorizontalAlignment="Left" Height="53" Margin="-208,150,0,0" VerticalAlignment="Top" Width="181" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontSize="22" FontFamily="Roboto Black" Click="Btn_CookedRecipes_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Btn_RecentlyViewed" Content="{DynamicResource ResourceKey=RecentlyViewedBTN}" HorizontalAlignment="Left" Height="53" Margin="-208,257,0,0" VerticalAlignment="Top" Width="181" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontSize="22" FontFamily="Roboto Black" Click="Btn_RecentlyViewed_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Btn_CookedToday" Content="Cooked Today" HorizontalAlignment="Left" Height="53" Margin="62,294,0,0" VerticalAlignment="Top" Width="181" Background="#FFFE5F55" BorderBrush="{x:Null}" Foreground="#FFFCFFFC" FontSize="22" FontFamily="Roboto Black" Click="Btn_CookedToday_Click" Visibility="Hidden"/>
+                <Grid x:Name="P_SavedRecipesSearch" HorizontalAlignment="Left" Height="433" Margin="297,65,0,0" VerticalAlignment="Top" Width="307" Visibility="Hidden" >
+                    <ListBox x:Name="lb_SavedRecipesList" HorizontalAlignment="Left" Height="364" VerticalAlignment="Top" Width="285" Margin="11,59,0,0" FontSize="20" Foreground="#FF5E6973" BorderBrush="#FF5E6973" FontFamily="Roboto Black" SelectionChanged="SavedRecipesItemClicked"/>
+                    <TextBox x:Name="tb_SearchSavedRecipes" HorizontalAlignment="Left" Height="32" Margin="11,19,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="285" TextAlignment="Center" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" SelectionBrush="#844392F1" LostFocus="SavedRecipeSearchLostFocus" GotFocus="SearchSavedRecipesFocused" TextChanged="SearchSavedRecipesTextChanged" BorderBrush="#FF5E6973"/>
+
+                </Grid>
+                <Button x:Name="Btn_SavedRecipes" Content="{DynamicResource ResourceKey=SavedBTN}" HorizontalAlignment="Left" Height="53" Margin="-208,363,0,0" VerticalAlignment="Top" Width="181" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontSize="22" FontFamily="Roboto Black" Click="Btn_SavedRecipes_Click" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Grid x:Name="P_RecenltlyViewedRecipes" HorizontalAlignment="Left" Height="420" Margin="297,85,0,0" VerticalAlignment="Top" Width="307" Visibility="Visible">
+                    <Ellipse x:Name="Img_RecentlyViewed_1" Height="118" VerticalAlignment="Top" Margin="10,13,179,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                    <Ellipse x:Name="Img_RecentlyViewed_2" Height="118" VerticalAlignment="Top" Margin="180,16,10,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                    <Ellipse x:Name="Img_RecentlyViewed_4" Height="118" VerticalAlignment="Top" Margin="180,152,10,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                    <Ellipse x:Name="Img_RecentlyViewed_3" Height="118" VerticalAlignment="Top" Margin="10,152,179,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                    <Ellipse x:Name="Img_RecentlyViewed_5" Height="118" VerticalAlignment="Top" Margin="10,285,179,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                    <Ellipse x:Name="Img_RecentlyViewed_6" Height="118" VerticalAlignment="Top" Margin="180,285,10,0" Stroke="#005E6973" MouseDown="ShowRecentlyViewedRecipe" StrokeThickness="5" Fill="White"/>
+                </Grid>
+                <Grid x:Name="P_CookedTodayRecipes" HorizontalAlignment="Left" Height="409" Margin="306,70,0,0" VerticalAlignment="Top" Width="307" Background="#19FFFFFF" Visibility="Hidden">
+                    <Ellipse Fill="#FFF4F4F5" Height="163" VerticalAlignment="Top" Margin="69,40,76,0"/>
+                    <TextBlock x:Name="tB_CookedTodayRecipeName" Height="60" TextWrapping="Wrap" Text="Recipe Name" VerticalAlignment="Top" Margin="0,235,0,0" FontFamily="Shrikhand" FontSize="36" Foreground="#FFFCFFFC" TextAlignment="Center"/>
+                    <Button Content="Revisit recipe" HorizontalAlignment="Left" Height="50" Margin="57,314,0,0" VerticalAlignment="Top" Width="191" Background="#FFFE5F55" BorderBrush="{x:Null}" Foreground="White" FontFamily="Roboto Black" FontSize="24"/>
+                </Grid>
+                <Grid x:Name="P_CookedRecipes" HorizontalAlignment="Left" Height="420" Margin="298,74,0,0" VerticalAlignment="Top" Width="307" Visibility="Hidden">
+                    <TextBox x:Name="tb_SearchCookedRecipes" Height="32" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Margin="10,10,12,0" FontFamily="Roboto Black" Background="White" SelectionBrush="#7F4392F1" BorderBrush="#FF5E6973" Foreground="#FF5E6973" TextAlignment="Center" FontSize="22" TextChanged="CookedRecipesTextChanged" GotFocus="SearchCookedRecipesFocused" LostFocus="SearchCookedRecipesLostFocus" Width="285"/>
+                    <ListBox x:Name="lb_ListOfCookedRecipes" HorizontalAlignment="Left" Height="364" Margin="10,50,0,0" VerticalAlignment="Top" Width="285" FontSize="20" FontFamily="Roboto Black" BorderBrush="#FF5E6973" Foreground="#FF5E6973" SelectionChanged="CookedRecipeClicked"/>
+                </Grid>
+                <Rectangle x:Name="Btn_CloseSavedRecipePanel" HorizontalAlignment="Left" Height="45" Margin="865,10,0,0" VerticalAlignment="Top" Width="49" Opacity="0.5">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock x:Name="Warning_Label" HorizontalAlignment="Left" Height="61" Margin="627,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" FontFamily="Roboto Black" FontSize="14" Foreground="#FFF24333" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_SavedRecipesPanelTitle_Copy" Height="42" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=StatsTB}" VerticalAlignment="Top" Margin="632,60,0,0" FontFamily="Shrikhand" FontSize="36" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="t_TotalCalories" Height="63" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=TotalCaloriesTB}" VerticalAlignment="Top" Margin="632,130,142,0" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="t_AverageDailyCalories" Height="63" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AverageDailyCaloriesTB}" VerticalAlignment="Top" Margin="632,205,147,0" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="t_RecipesCooked" Height="42" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=RecipesCookedTB}" VerticalAlignment="Top" Margin="636,357,138,0" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="t_TotalRecipesSeen" Height="42" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=RecipesSeenTB}" VerticalAlignment="Top" Margin="636,411,138,0" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="t_AverageMonthlyCalories" Height="73" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AverageMonthlyCaloriesTB}" VerticalAlignment="Top" Margin="627,279,138,0" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_TotalCalories" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Margin="762,133,12,0" FontFamily="Roboto Light" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_AverageDailyCalories" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Margin="762,205,12,0" FontFamily="Roboto Light" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_AverageMontlyCalories" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Margin="765,279,0,0" FontFamily="Roboto Light" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_TotalRecipesCooked" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Margin="771,357,3,0" FontFamily="Roboto Light" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_TotalRecipeSeen" Height="42" TextWrapping="Wrap" VerticalAlignment="Top" Margin="771,411,3,0" FontFamily="Roboto Light" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="Tb_DoubleClickOnRecipePrompt" HorizontalAlignment="Left" Height="30" Margin="0,505,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DoubleClickOnRecipePrompt}" VerticalAlignment="Top" Width="921" TextAlignment="Center" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973"/>
+            </Grid>
+            <Grid x:Name="p_FullRecipeView" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="537" Margin="0,131,0,-600" VerticalAlignment="Top" Width="924" Background="#FFF7F4F3" Grid.Row="4" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <TextBlock x:Name="tB_RecipeTitle" Height="58" TextWrapping="Wrap" Text="Recipe Name" VerticalAlignment="Top" Margin="180,10,163,0" FontFamily="Shrikhand" FontSize="36" TextAlignment="Center" Foreground="#FF5E6973"/>
+                <Ellipse x:Name="img_RecipeImage" HorizontalAlignment="Left" Height="83" Margin="97,10,0,0" Stroke="#FF5E6973" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.5,0.5"/>
+                <TextBlock x:Name="tB_IngredientsTitle" HorizontalAlignment="Left" Height="30" Margin="97,103,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=IngredientsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.058,0.561"/>
+                <TextBlock x:Name="tB_DirectionsTitle" HorizontalAlignment="Left" Height="30" Margin="559,108,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DirectionsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <Rectangle x:Name="btn_CloseRecipeView" HorizontalAlignment="Left" Height="40" Margin="870,10,0,0" VerticalAlignment="Top" Width="44" Opacity="0.5">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <ListView x:Name="lv_Ingredients" HorizontalAlignment="Left" Height="319" Margin="12,138,0,0" VerticalAlignment="Top" Width="300" FontFamily="Roboto Medium" FontSize="18" Background="White" BorderBrush="#FF5E6973" Foreground="#FF5E6973">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="{DynamicResource ResourceKey=IngredientListIngredients}" Width="150"  DisplayMemberBinding="{Binding USName}"/>
+                            <GridViewColumn Header="{DynamicResource ResourceKey=IngredientListAmounts}" Width="150" DisplayMemberBinding="{Binding IngrAmount}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <TextBlock x:Name="tB_Directions" HorizontalAlignment="Left" Height="190.748" Margin="318.426,140.016,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="594.444" FontFamily="Roboto Medium" FontSize="16" Foreground="#FF5E6973" RenderTransformOrigin="0.5,0.5" Background="#19FFFFFF" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="0.259"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="0.513"/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform></TextBlock>
+                <TextBlock x:Name="tB_TimeToCook" HorizontalAlignment="Left" Height="42" Margin="336,62,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=TimeToCookTextBlock}" VerticalAlignment="Top" Width="148" FontFamily="Roboto Black" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_TimeToCookAmount" HorizontalAlignment="Left" Height="30" Margin="489,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontFamily="Roboto Medium" FontSize="18" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="Tb_AddedToCookedRecipesInfo" HorizontalAlignment="Left" Height="29" Margin="322,477,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AddedToCookedRecipesPopup}" VerticalAlignment="Top" Width="148" FontFamily="Roboto Medium" TextAlignment="Center" FontSize="14" Foreground="#FF5E6973" Opacity="0" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Button x:Name="Btn_RecipeWillBeCooked" Content="{DynamicResource ResourceKey=CookItButton}" HorizontalAlignment="Left" Height="41" Margin="322,475,0,0" VerticalAlignment="Top" Width="148" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontFamily="Roboto Black" FontSize="22" Click="Btn_RecipeWillBeCooked_Click"/>
+                <TextBlock x:Name="Tb_AddedToCookedRecipesInfo_Copy" HorizontalAlignment="Left" Height="29" Margin="476,475,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=AddedToSavedRecipesPopup}" VerticalAlignment="Top" Width="148" FontFamily="Roboto Medium" TextAlignment="Center" FontSize="14" Foreground="#FF5E6973" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <Button x:Name="BTN_AddToSavedRecipes" Content="{DynamicResource ResourceKey=SaveRecipeButton}" HorizontalAlignment="Left" Height="41" Margin="476,475,0,0" VerticalAlignment="Top" Width="148" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontFamily="Roboto Black" FontSize="22" Click="BTN_AddToSavedRecipes_Click"/>
+                <Grid x:Name="P_IngrAmountSatusMsg" HorizontalAlignment="Left" Height="168" Margin="632,359,0,0" VerticalAlignment="Top" Width="285" Background="#FFF7F4F3">
+                    <TextBlock x:Name="Tb_IngrMessageContents" HorizontalAlignment="Left" Height="109" Margin="0,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontFamily="Roboto Light" TextAlignment="Center" FontSize="18" Foreground="#FF5E6973"><Run/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="Tb_IngrMessageTitle" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" FontFamily="Roboto Black" TextAlignment="Center" FontSize="18" Foreground="#FF5E6973" Margin="0,6,0,0"/>
+                </Grid>
+
+            </Grid>
+            <Grid x:Name="p_UserFoods" HorizontalAlignment="Left" Height="537" Grid.RowSpan="5" VerticalAlignment="Top" Width="924" Background="#FFF7F4F3" Margin="93,-1,-1017,0" Grid.Column="6" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <ListView x:Name="lb_FoodList" HorizontalAlignment="Left" Height="351" Margin="308,66,0,0" VerticalAlignment="Top" Width="304" Foreground="#FF5E6973" BorderBrush="#FF5E6973" FontFamily="Roboto Medium" FontSize="18" SelectionChanged="ShowFoodInfo">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="{DynamicResource ResourceKey=IngredientListIngredients}" Width="150"  DisplayMemberBinding="{Binding USName}"/>
+                            <GridViewColumn Header="{DynamicResource ResourceKey=IngredientListAmounts}" Width="150" DisplayMemberBinding="{Binding Amount}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="Btn_SearchFoods" Content="{DynamicResource ResourceKey=SearchButton}" HorizontalAlignment="Left" Height="39" Margin="308,440,0,0" VerticalAlignment="Top" Width="142" Background="#FF4392F1" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontFamily="Roboto Black" FontSize="24" Click="Btn_SearchFoods_Click"/>
+                <TextBlock x:Name="SummaryTB" HorizontalAlignment="Left" Height="30" Margin="47,66,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SummaryTB}" VerticalAlignment="Top" Width="192" FontFamily="Roboto Black" FontSize="26" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="TB_FoodInfo" HorizontalAlignment="Left" Height="30" Margin="681,66,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=FoodInfoTB}" VerticalAlignment="Top" Width="192" FontFamily="Roboto Black" FontSize="26" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="30" Margin="0,132,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=CaloriesTB}" VerticalAlignment="Top" Width="164.017" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_CalorieSummary" HorizontalAlignment="Left" Height="30" Margin="161,133.9,0,0" TextWrapping="Wrap" Text="9000" VerticalAlignment="Top" Width="109" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="30" Margin="0,204,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=ProteinTB}" VerticalAlignment="Top" Width="164" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_ProteinSummary" HorizontalAlignment="Left" Height="30" Margin="152,206,0,0" TextWrapping="Wrap" Text="600  g" VerticalAlignment="Top" Width="117" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Height="30" Margin="0,249,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=FatTB}" VerticalAlignment="Top" Width="164" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FatSummary" HorizontalAlignment="Left" Height="30" Margin="152,250.9,0,0" TextWrapping="Wrap" Text="900 g" VerticalAlignment="Top" Width="117" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock4" HorizontalAlignment="Left" Height="30" Margin="0,293,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=CarbsTB}" VerticalAlignment="Top" Width="164" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_CarbsSummary" HorizontalAlignment="Left" Height="30" Margin="152,295,0,0" TextWrapping="Wrap" Text="200 g" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock5" HorizontalAlignment="Left" Height="30" Margin="0,339,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SugarTB}" VerticalAlignment="Top" Width="164.017" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_SugarSumary" HorizontalAlignment="Left" Height="30" Margin="152,340.9,0,0" TextWrapping="Wrap" Text="155 g " VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock6" HorizontalAlignment="Left" Height="30" Margin="0,385,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SodiumTB}" VerticalAlignment="Top" Width="164.017" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_SodiumSummary" HorizontalAlignment="Left" Height="30" Margin="152,386.9,0,0" TextWrapping="Wrap" Text="12 g" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="tb_FoodName" HorizontalAlignment="Left" Height="30" Margin="671,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.284"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Height="30" Margin="629,132,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=CaloriesTB}" VerticalAlignment="Top" Width="151" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tb_FoodItemCalorie" HorizontalAlignment="Left" Height="30" Margin="776,133.9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Height="30" Margin="627,202.1,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=ProteinTB}" VerticalAlignment="Top" Width="151" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FoodProtein" HorizontalAlignment="Left" Height="30" Margin="776,204.1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" Height="30" Margin="629,249,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=FatTB}" VerticalAlignment="Top" Width="151" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FoodFat" HorizontalAlignment="Left" Height="30" Margin="776,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" Height="30" Margin="628.605,295,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=CarbsTB}" VerticalAlignment="Top" Width="149.585" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FoodCarbs" HorizontalAlignment="Left" Height="30" Margin="776,296.9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock11" HorizontalAlignment="Left" Height="30" Margin="628.605,339,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SugarTB}" VerticalAlignment="Top" Width="149.585" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FoodSugar" HorizontalAlignment="Left" Height="30" Margin="776,340.9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Height="30" Margin="628.605,385,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SodiumTB}" VerticalAlignment="Top" Width="150.913" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
+                <TextBlock x:Name="tB_FoodSodium" HorizontalAlignment="Left" Height="30" Margin="777,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
+                <Rectangle x:Name="btn_CloseFoods" HorizontalAlignment="Left" Height="43" Margin="868,10,0,0" VerticalAlignment="Top" Width="46" MouseUp="Btn_Showfridge_Click" Opacity="0.5">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Button x:Name="Btn_RemoveItem" Content="{DynamicResource ResourceKey=RemoveButton}" HorizontalAlignment="Left" Height="39" Margin="455,440,0,0" VerticalAlignment="Top" Width="157" Background="#FF4392F1" FontFamily="Roboto Black" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontSize="24" Click="Btn_RemoveItem_Click"/>
+                <TextBlock x:Name ="FoodsTitle" HorizontalAlignment="Left" Height="46" Margin="308,11,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=FoodsTB}" VerticalAlignment="Top" Width="304" FontFamily="Shrikhand" TextAlignment="Center" FontSize="36" Foreground="#FF5E6973"/>
+                <Grid x:Name="p_AddFoodItemPanel" HorizontalAlignment="Left" Height="455" Margin="309,548,0,-466" VerticalAlignment="Top" Width="304" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Grid x:Name="P_AddFoodAmount" HorizontalAlignment="Left" Height="454" Margin="30,1,-2,0" VerticalAlignment="Top" Width="276" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="TB_AddedFoodNameItem" HorizontalAlignment="Left" Height="42" Margin="29,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" FontFamily="Roboto Medium" FontSize="20" TextAlignment="Center" Foreground="#FFF8F5F4"/>
+                        <Button Content="{DynamicResource ResourceKey=AddFoodBTN}" HorizontalAlignment="Left" Height="31" Margin="79,413,0,0" VerticalAlignment="Top" Width="112" Click="AddFoodItemClick" Background="#FFF7F4F3" BorderBrush="{x:Null}" Foreground="#FF4392F1" FontFamily="Roboto Black" FontSize="16" Grid.RowSpan="1"/>
+                        <TextBox x:Name="Tb_CustomAmount" HorizontalAlignment="Left" Height="28" Margin="45,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="14" TextAlignment="Center" Foreground="#FF5E6973" SelectionBrush="#7FF24333" BorderBrush="#FF5E6973"/>
+                        <TextBlock x:Name="Tb_UOMLabel" HorizontalAlignment="Left" Height="35" Margin="45,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextAlignment="Center" Foreground="#FFF8F5F4" FontFamily="Roboto Medium" FontSize="16"/>
+                        <RadioButton x:Name="Cb_SuggestedAmount_1" Content="" HorizontalAlignment="Left" Height="30" Margin="66,72,0,0" VerticalAlignment="Top" Width="126" Foreground="#FFF8F5F4"/>
+                        <RadioButton x:Name="Cb_SuggestedAmount_2" Content="" HorizontalAlignment="Left" Height="30" Margin="66,107,0,0" VerticalAlignment="Top" Width="126" Foreground="#FFF8F5F4"/>
+                        <RadioButton x:Name="Cb_SuggestedAmount_3" Content="" HorizontalAlignment="Left" Height="30" Margin="65,142,0,0" VerticalAlignment="Top" Width="126" Foreground="#FFF8F5F4"/>
+                        <RadioButton x:Name="Cb_SuggestedAmount_4" Content="" HorizontalAlignment="Left" Height="30" Margin="65,177,0,0" VerticalAlignment="Top" Width="126" Foreground="#FFF8F5F4" BorderBrush="#FF5E6973"/>
+                        <TextBlock x:Name="L_FoodAmountWarning" HorizontalAlignment="Left" Height="35" Margin="45,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" TextAlignment="Center" FontFamily="Roboto" Foreground="#FFF7F4F3" FontSize="14"/>
+                    </Grid>
+                    <TextBox x:Name="tb_FoodSearch" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Margin="7,10,8,0" TextAlignment="Center" FontFamily="Roboto Black" FontSize="18" Foreground="#FF5E6973" BorderBrush="#FF5E6973" Background="#FFF7F4F3" TextChanged="OnTextChanged" Text="Search" GotFocus="SearchFoodClearTextBox" LostFocus="FoodSearchLostFocus" SelectionBrush="#7F0078D7"/>
+                    <ListBox x:Name="lB_SuggestedFoods" HorizontalAlignment="Left" Height="329" Margin="7,43,0,0" VerticalAlignment="Top" Width="289" SelectionChanged="AddClickedItem" BorderBrush="#FF5E6973" Background="#FFF7F4F3" Foreground="#FF5E6973" FontFamily="Roboto Medium" FontSize="18"/>
+                    <TextBlock x:Name="l_SearchInfo" HorizontalAlignment="Left" Height="29" Margin="0,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304" Foreground="#FFF7F4F3" FontFamily="Roboto Light" FontSize="14" TextAlignment="Center"><Run Text="Type to search for foods to add"/><LineBreak/><Run Text="."/></TextBlock>
+                    <Button x:Name="btn_Close" Content="{DynamicResource ResourceKey=CloseAddFoodButton}" Margin="84,414,85,10" Background="#FFF8F5F4" BorderBrush="{x:Null}" Foreground="#FF4392F1" FontFamily="Roboto Black" FontSize="16"/>
+                </Grid>
+            </Grid>
+            <Button 
+                x:Name="Btn_OpenLanguageSettings" 
+                Grid.ColumnSpan="2" 
+                Content="" 
+                HorizontalAlignment="Center" 
+                Height="28" 
+                Margin="16,13,209,25" 
+                VerticalAlignment="Center" 
+                Width="32" 
+                BorderBrush="{x:Null}" 
+                Opacity="0.6" 
+                ToolTip="{DynamicResource ResourceKey=LangSettingsToolTip}">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border
+                                    x:Name="border"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="0"
+                                    TextBlock.Foreground="Black">
+                                        <Grid>
+                                            <Image
+                                            x:Name="buttonImage"
+                                            Source="Images/ic_settings_black_48dp_2x.png"
+                                            Stretch="UniformToFill" />
+                                            <ContentPresenter
+                                            Margin="{TemplateBinding Padding}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="buttonImage" Property="Source" Value="Images/ic_settings_applications_black_48dp_2x.png" />
+
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="border" Property="Background" Value="#4C808080" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Grid x:Name="grid" HorizontalAlignment="Left" Height="53" Margin="-262,3,0,0" VerticalAlignment="Top" Width="174" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Button x:Name="Btn_ChangeToUS" Content="US" Height="25" Margin="24,14,110,0" VerticalAlignment="Top" Click="ChangeLanguage" Tag="en-US" BorderBrush="{x:Null}" ToolTip="{DynamicResource ResourceKey=USButtonToolTip}" Width="40" Background="#FFF7F4F3" FontFamily="Roboto Black" FontSize="18" Foreground="#FF4392F1"/>
+                <Button x:Name="Btn_ChangeToBG" Content="BG" HorizontalAlignment="Left" Height="25" Margin="92,14,0,0" VerticalAlignment="Top" Width="40" Click="ChangeLanguage" Tag="bg-BG" BorderBrush="{x:Null}" ToolTip="{DynamicResource ResourceKey=BGButtonToolTip}" Background="#FFF7F4F3" FontFamily="Roboto Black" FontSize="18" Foreground="#FF4392F1"/>
+                <Button x:Name="Btn_CloseLangSettings" Content="" HorizontalAlignment="Left" Height="25" Margin="142,13,0,0" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Opacity="0.5">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border
+                                    x:Name="border"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="0"
+                                    TextBlock.Foreground="Black">
+                                            <Grid>
+                                                <Image
+                                            x:Name="buttonImage"
+                                            Source="Images/ic_navigate_before_white_48dp_2x.png"
+                                            Stretch="UniformToFill" />
+                                                <ContentPresenter
+                                            Margin="{TemplateBinding Padding}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="buttonImage" Property="Source" Value="Images/ic_arrow_back_white_48dp_2x.png" />
+
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter TargetName="border" Property="Background" Value="#4C808080" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+            <Grid x:Name="StartPanelMunchy" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="536" VerticalAlignment="Top" Width="924" Background="#FF4392F1" Margin="0,694,0,-1162" Grid.Row="4" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <TextBlock HorizontalAlignment="Left" Height="103.018" Margin="167.05,218.763,0,0" TextWrapping="Wrap" Text="Munchy" VerticalAlignment="Top" Width="582" FontSize="72" FontFamily="Shrikhand" Foreground="#FFF7F4F3" TextAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="P_ShoppingList" Grid.Column="4" HorizontalAlignment="Left" Height="537" Margin="1088,-1,-1368,0" Grid.RowSpan="5" VerticalAlignment="Top" Width="280" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <ListBox x:Name="Lb_ShoppingList" HorizontalAlignment="Left" Height="365" Margin="13,164,0,0" VerticalAlignment="Top" Width="256"/>
+                <TextBox x:Name="Tb_AddToShoppingListSearch" HorizontalAlignment="Left" Height="41" Margin="13,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionBrush="#800078D7" BorderBrush="{x:Null}" Foreground="#FF5E6973" FontFamily="Roboto Medium" FontSize="20" TextChanged="Tb_AddToShoppingListTxtChanged" Text="Search" GotFocus="ShoppingListSearchGotFocus" LostFocus="ShoppingListSearchLostFocus" MouseEnter="ShoppingSearchMouseEnter" MouseLeave="ShoppingSearchMouseLeave"/>
+                <Button x:Name="Btn_AddToShoppingList" Content="{DynamicResource ResourceKey=AddFoodBTN}" HorizontalAlignment="Left" Height="39" Margin="13,115,0,0" VerticalAlignment="Top" Width="118" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_AddToShoppingList_Click"/>
+                <TextBlock x:Name="TB_ShoppingList" HorizontalAlignment="Left" Height="28" Margin="0,11,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=ShoppingList}" VerticalAlignment="Top" Width="280" FontFamily="Roboto Black" Foreground="#FFF7F4F3" TextAlignment="Center" FontSize="24"/>
+                <Button x:Name="Btn_RemoveFromShoppingList" Content="{DynamicResource ResourceKey=RemoveButton}" HorizontalAlignment="Left" Height="39" Margin="150,115,0,0" VerticalAlignment="Top" Width="119" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_RemoveFromShoppingList_Click_1"/>
+                <Button x:Name="Btn_CloseShoppingList" Content="" HorizontalAlignment="Left" Height="27" Margin="242,13,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.487,0.202" Click="Btn_CloseShoppingList_Click">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform X="0.754" Y="16.092"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border
+                                    x:Name="border"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="0"
+                                    TextBlock.Foreground="Black">
+                                            <Grid>
+                                                <Image
+                                            x:Name="buttonImage"
+                                            Source="Images/ic_close_white_512dp_2x.png"
+                                            Stretch="UniformToFill" />
+                                                <ContentPresenter
+                                            Margin="{TemplateBinding Padding}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center" />
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="buttonImage" Property="Source" Value="Images/ic_navigate_before_white_48dp_2x.png" />
+
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter TargetName="border" Property="Background" Value="#4C808080" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <ListBox x:Name="L_ShoppingListSuggestedItem" HorizontalAlignment="Left" Height="416" Margin="13,113,0,0" VerticalAlignment="Top" Width="255" Visibility="Hidden" SelectionChanged="ShoppingListSuggestedItemSelected" MouseLeave="SuggestedItemsMouseLeave"/>
+            </Grid>
+
+        </Grid>
+    </Viewbox>
+</Window>

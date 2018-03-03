@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- BULGARIAN RESOURCE FILE -->
+
+    <!--Front Page-->
+    <sys:String x:Key="ResourceDictionaryName">Loc-bg-BG</sys:String>
+    <sys:String x:Key="FavouriteRecipesTextBlock">Скоро видяни</sys:String>
+    <sys:String x:Key="FridgeTextBlock">Хладилник</sys:String>
+    <sys:String x:Key="CaloriesTextBlock">Калории</sys:String>
+    <sys:String x:Key="SuggestRecipeButton">Намери рецепта</sys:String>
+    <sys:String x:Key="DiscoverRecipesButton">Открии</sys:String>
+    <sys:String x:Key="SeeAllFavouriteRecipesButton">Виж всички</sys:String>
+    <sys:String x:Key="ShowRecipeButton">Покажи рецепта</sys:String>
+    <sys:String x:Key="ShowFridgeButton">Отвори хладилник</sys:String>
+    <sys:String x:Key="DietBalanceTextBlock">Диетичен баланс</sys:String>
+    <sys:String x:Key="PreviousRecipeBTN">Предишна рецепта</sys:String>
+    <sys:String x:Key="NextRecipeBTN">Следваща рецепта</sys:String>
+    <sys:String x:Key="AddFoodBTN">Добави</sys:String>
+    <sys:String x:Key="ShoppingList">Списък за пазар</sys:String>
+
+    
+    <!--Settings Panel-->
+    <sys:String x:Key="SettingsTextBlock">Настройки</sys:String>
+    <sys:String x:Key="SexTextBlock">Пол</sys:String>
+    <sys:String x:Key="LanguagePrefTextBlock">Език</sys:String>
+    <sys:String x:Key="FoodPrefTextBlock">Предпочитания</sys:String>
+    <sys:String x:Key="HealthIssuesTextBlock">Здравословни проблеми</sys:String>
+    <sys:String x:Key="AllergiesTextBlock">Алергии</sys:String>
+    <sys:String x:Key="UserNameTextBlock">Име</sys:String>
+    <sys:String x:Key="AgeTextBlock">Възраст</sys:String>
+    <sys:String x:Key="WeightTextBlock">Тегло</sys:String>
+    <sys:String x:Key="VegetarianCB">Вегетарианец</sys:String>
+    <sys:String x:Key="VeganCB">Веган</sys:String>
+    <sys:String x:Key="DiabeticCB">Диабетик</sys:String>
+    <sys:String x:Key="NutsCB">Ядки</sys:String>
+    <sys:String x:Key="SoyCB">Соя</sys:String>
+    <sys:String x:Key="GlutenCB">Глутен</sys:String>
+    <sys:String x:Key="DairyCB">Мляко</sys:String>
+    <sys:String x:Key="FishCB">Риба</sys:String>
+    <sys:String x:Key="EggsCB">Яйца</sys:String>
+    <sys:String x:Key="SaveSettingsButton">Запази</sys:String>
+    <sys:String x:Key="MaleRB">Мъж</sys:String>
+    <sys:String x:Key="FemaleRB">Жена</sys:String>
+    <sys:String x:Key="ENCB">English</sys:String>
+    <sys:String x:Key="BGCB">Български</sys:String>
+    <sys:String x:Key="SettingsSavedPopup">Настройки запазени!</sys:String>
+
+
+    <!--Full Recipe View Panel-->
+    <sys:String x:Key="TimeToCookTextBlock">Време за готвене</sys:String>
+    <sys:String x:Key="IngredientsTextBlock">Съставки</sys:String>
+    <sys:String x:Key="DirectionsTextBlock">Инструкции</sys:String>
+    <sys:String x:Key="CookItButton">Ще го сготвя!</sys:String>
+    <sys:String x:Key="SaveRecipeButton">Зпази</sys:String>
+    <sys:String x:Key="AddedToSavedRecipesPopup">Рецептата запазена!</sys:String>
+    <sys:String x:Key="AddedToCookedRecipesPopup">Приятно ядене!</sys:String>
+
+    <!--Fridge Panel-->
+    <sys:String x:Key="CaloriesTB">Калории</sys:String>
+    <sys:String x:Key="ProteinTB">Протеин</sys:String>
+    <sys:String x:Key="FatTB">Мазнини</sys:String>
+    <sys:String x:Key="CarbsTB">Въглехидрати</sys:String>
+    <sys:String x:Key="SugarTB">Захари</sys:String>
+    <sys:String x:Key="SodiumTB">Сол</sys:String>
+    <sys:String x:Key="SearchButton">Търси</sys:String>
+    <sys:String x:Key="RemoveButton">Премахни</sys:String>
+    <sys:String x:Key="CloseAddFoodButton">Затвори</sys:String>
+    <sys:String x:Key="SummaryTB">Статистика</sys:String>
+    <sys:String x:Key="FoodInfoTB">Информация</sys:String>
+    <sys:String x:Key="FoodsTB">Храни</sys:String>
+
+    <!--Saved Recipes Panel-->
+    <sys:String x:Key="CookedRecipeBTN">Сготвени</sys:String>
+    <sys:String x:Key="RecentlyViewedBTN">Скоро видяни</sys:String>
+    <sys:String x:Key="SavedBTN">Запазени</sys:String>
+    <sys:String x:Key="StatsTB">Статистики</sys:String>
+    <sys:String x:Key="TotalCaloriesTB">Общо калории приети</sys:String>
+    <sys:String x:Key="AverageDailyCaloriesTB">Средни днвени калории</sys:String>
+    <sys:String x:Key="AverageMonthlyCaloriesTB">Средни месечни калории</sys:String>
+    <sys:String x:Key="RecipesCookedTB">Сготвени рецепти</sys:String>
+    <sys:String x:Key="RecipesSeenTB">Видяни рецепти</sys:String>
+    <sys:String x:Key="DoubleClickOnRecipePrompt">Кликнете два пъти за да отворите рецептата.</sys:String>
+
+
+    <sys:String x:Key="IngredientListIngredients">Съставки</sys:String>
+    <sys:String x:Key="IngredientListAmounts">Количество</sys:String>
+
+    <sys:String x:Key="FridgeToolTip">Тук ще намерите храните които скоро сте добавили.</sys:String>
+    <sys:String x:Key="BTNShowFridgeToolTip">Натиснете тук за да отворите хладилника.</sys:String>
+    <sys:String x:Key="BTNShowRecipeToolTip">Натиснете тук за да отворите рецептата.</sys:String>
+    <sys:String x:Key="BTNShowRecentlyViewedToolTip">Натиснете тук за да видите кои рецепти сте запазили.</sys:String>
+    <sys:String x:Key="OpenSettingsToolTip">Натиснете тук за да отворите настройките за профила ви.</sys:String>
+    <sys:String x:Key="BTNFindRecipeToolTip">Натиснете тук за да освежите списъка с рецепти.</sys:String>
+    <sys:String x:Key="BGButtonToolTip">Натиснете тук за да смените езика на Български.</sys:String>
+    <sys:String x:Key="USButtonToolTip">Натиснете тук за да смените езика на Английски.</sys:String>
+    <sys:String x:Key="LangSettingsToolTip">Смяна на езика.</sys:String>
+    <sys:String x:Key="Discover feature">Тази функционалност ще дойде скоро!</sys:String>
+
+</ResourceDictionary>
