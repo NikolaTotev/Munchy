@@ -1,7 +1,7 @@
 # Munchy
 Project for the National Olympiad in Information Technology by Nikola Totev. Project Number 295
 
-Description: This repository contains source code for Project Munchy.
+Description: This repository contains source code and data files needed for development of Project Munchy.
 Contents: 
 1. MunchyAPI - the logic library that is used in the Munchy project.
 2. MunchyUI - the UI side of the project. This is meant to be built into an .exe for users.
