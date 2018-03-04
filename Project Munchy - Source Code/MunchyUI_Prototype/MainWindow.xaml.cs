@@ -330,7 +330,7 @@ namespace MunchyUI
                 }
             }
 
-            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag))
+            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag, m_CurrentManager))
             {
                 Tb_IngrMessageTitle.Foreground = Brushes.Green;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForAllIngrPresent(m_ActiveLanguage);
@@ -378,7 +378,7 @@ namespace MunchyUI
         //Handles adding the suggested to the CookedRecipes list. A recipe is added only when the user pressed the "I'll Cook It" Button.
         private void AddToCookedRecipes()
         {
-            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag))
+            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag, m_CurrentManager))
             {
                 RecipeSaver saver = m_CurrentManager.UserRecipeSaves;
                 AddToList(saver.USCookedRecipes, m_SuggestedRecipe.USName);
@@ -1509,7 +1509,7 @@ namespace MunchyUI
             tb_SearchCookedRecipes.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
             Tb_AddToShoppingListSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
 
-            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag))
+            if (m_CurrentManager.UsersFridge.FridgeConatains(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag, m_CurrentManager))
             {
                 Tb_IngrMessageTitle.Foreground = Brushes.Green;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForAllIngrPresent(m_ActiveLanguage);

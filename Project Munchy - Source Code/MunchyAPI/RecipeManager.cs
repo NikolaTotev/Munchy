@@ -144,7 +144,7 @@ namespace Nikola.Munchy.MunchyAPI
                         Dinner.Add(item.Key);
                     }
 
-                    if(CurrentManager.UsersFridge.FridgeConatains(item.Value.USIngredients, item.Value.Amounts, item.Value.Units, CurrentManager.FoodManag))
+                    if(CurrentManager.UsersFridge.FridgeConatains(item.Value.USIngredients, item.Value.Amounts, item.Value.Units, CurrentManager.FoodManag, CurrentManager))
                     {
                         RecipesWithFridgeFoods.Add(item.Key);
                     }                  

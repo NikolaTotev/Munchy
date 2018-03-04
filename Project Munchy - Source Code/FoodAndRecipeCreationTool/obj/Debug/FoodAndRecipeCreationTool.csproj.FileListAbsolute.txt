@@ -17,3 +17,22 @@ D:\Desktop\Software Engineering\MunchySolution\Munchy\FoodAndRecipeCreationTool\
 D:\Desktop\Software Engineering\MunchySolution\Munchy\FoodAndRecipeCreationTool\bin\Debug\Newtonsoft.Json.dll
 D:\Desktop\Software Engineering\MunchySolution\Munchy\FoodAndRecipeCreationTool\bin\Debug\MunchyAPI.pdb
 D:\Desktop\Software Engineering\MunchySolution\Munchy\FoodAndRecipeCreationTool\bin\Debug\Newtonsoft.Json.xml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\FoodAndRecipeCreationTool.exe.config
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\FoodAndRecipeCreationTool.exe
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\FoodAndRecipeCreationTool.pdb
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\MunchyAPI.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\Newtonsoft.Json.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\MunchyAPI.pdb
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\bin\Debug\Newtonsoft.Json.xml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.csprojResolveAssemblyReference.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\MainWindow.g.cs
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\App.g.cs
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool_MarkupCompile.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool_MarkupCompile.lref
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\MainWindow.baml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.g.resources
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.Properties.Resources.resources
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.csproj.GenerateResource.Cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.csproj.CoreCompileInputs.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.exe
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\FoodAndRecipeCreationTool\obj\Debug\FoodAndRecipeCreationTool.pdb

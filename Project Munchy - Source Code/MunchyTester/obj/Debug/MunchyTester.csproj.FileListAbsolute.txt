@@ -15,3 +15,20 @@ D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyTester\obj\Debug\Mun
 D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyTester\obj\Debug\MunchyTester.csproj.CoreCompileInputs.cache
 D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyTester\obj\Debug\MunchyTester.dll
 D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyTester\obj\Debug\MunchyTester.pdb
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\MunchyTester.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\MunchyTester.pdb
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\MunchyAPI.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Newtonsoft.Json.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\MunchyAPI.pdb
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\bin\Debug\Newtonsoft.Json.xml
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\obj\Debug\MunchyTester.csprojResolveAssemblyReference.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\obj\Debug\MunchyTester.csproj.CoreCompileInputs.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\obj\Debug\MunchyTester.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyTester\obj\Debug\MunchyTester.pdb

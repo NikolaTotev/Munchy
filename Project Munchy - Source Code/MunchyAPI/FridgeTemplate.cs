@@ -62,13 +62,41 @@ namespace Nikola.Munchy.MunchyAPI
             SaveFridge();
         }
 
+
+        public void AddToShoppingList(List<string> FoodItemsToChange, List<float> AmountsToChange, List<string> Units, FoodManager foodManager, ProgramManager programManager)
+        {
+            if (FoodItemsToChange != null)
+            {
+                for (int i = 0; i < FoodItemsToChange.Count; i++)
+                {
+                    float AmountToRemove = UnitConverter.GetAmountToRemove(FoodItemsToChange[i], AmountsToChange[i], Units[i], foodManager);
+
+                    if (USUsersFoods.ContainsKey(FoodItemsToChange[i]))
+                    {
+                        foreach (KeyValuePair<string, FoodDef> element in USUsersFoods)
+                        {
+                            if (element.Value.USName == FoodItemsToChange[i] && element.Value.Amount - AmountToRemove < 0)
+                            {
+                                programManager.UserShoppingList.AddToShoppingList(element.Value.USName, element.Value.BGName);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        programManager.UserShoppingList.AddToShoppingList(FoodItemsToChange[i], foodManager.Foods[FoodItemsToChange[i]].BGName);
+                    }
+                }
+            }
+            // Only if requirements are met does the function return true.
+        }
+
         /// <summary>
         /// Takes a string array, loops through the array checknig if the fridge dictionary contains such a key. 
         /// If it doesn't contain even one item it breaks the loop and returns false.
         /// </summary>
         /// <param name="foods"></param>
         /// <returns></returns>
-        public bool FridgeConatains(List<string> FoodItemsToChange, List<float> AmountsToChange, List<string> Units, FoodManager foodManager)
+        public bool FridgeConatains(List<string> FoodItemsToChange, List<float> AmountsToChange, List<string> Units, FoodManager foodManager, ProgramManager programManager)
         {
             if(FoodItemsToChange != null)
             {
@@ -82,12 +110,14 @@ namespace Nikola.Munchy.MunchyAPI
                         {
                             if (element.Value.USName == FoodItemsToChange[i] && element.Value.Amount - AmountToRemove < 0)
                             {
+                                AddToShoppingList(FoodItemsToChange, AmountsToChange, Units, foodManager, programManager);
                                 return false;
                             }
                         }
                     }
                     else
                     {
+                        AddToShoppingList(FoodItemsToChange, AmountsToChange, Units, foodManager, programManager);
                         return false;
                     }
 

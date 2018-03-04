@@ -15,31 +15,55 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_24D8093F0E85430E8052C5C194882644"
+        "MsmKey" = "8:_1AE7BE80410343B085D822D2AEE2D75E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_646DF6049B04D98106C0D921603DFF6D"
+        "MsmKey" = "8:_360FD5831F6D499FAB2E2AD3322D5040"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_405945EC705C43C9A20147E6E57BB036"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4ACCEB27AE404666877E71463FC1B974"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4BD67B3A766148F085858F78007A0F3C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5AF3FE6F8F4E576C164D19EEC5E28D2E"
         "OwnerKey" = "8:_AAD0C2BBCC729E1F856B0D0620F236D6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_646DF6049B04D98106C0D921603DFF6D"
+        "MsmKey" = "8:_5AF3FE6F8F4E576C164D19EEC5E28D2E"
         "OwnerKey" = "8:_6B70BF0F55294E9CA2CB1466922B697E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_67606534DCE04418AF71F98C8F3B5F84"
+        "MsmKey" = "8:_6B70BF0F55294E9CA2CB1466922B697E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_6B70BF0F55294E9CA2CB1466922B697E"
+        "MsmKey" = "8:_78FB3BB703FB475B8C7586D42C49BC96"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,13 +75,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9424A5D08510414899930FE70596EDED"
+        "MsmKey" = "8:_9028CDEA8BB34F55A2914DA9820AEDA3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A0670DBF72234D57B8A8545DC48A37FF"
+        "MsmKey" = "8:_A0A28517CDDE4E0889D831FFADF7CB62"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,25 +99,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C2FC9F0234CB43649AFF589CDB70C4F4"
+        "MsmKey" = "8:_BF837454DC6B4AF6A170521120ECF1D5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DDE87E8817CD417EAF2FED40337EB376"
+        "MsmKey" = "8:_D15A760C06694FA5BFC08695DE729BDF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_E2A818439DC84F5EB6B7214452C44B84"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E2FEAFE9FC214798A9895F6775DB553B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -124,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_646DF6049B04D98106C0D921603DFF6D"
+        "OwnerKey" = "8:_5AF3FE6F8F4E576C164D19EEC5E28D2E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -228,10 +246,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_24D8093F0E85430E8052C5C194882644"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1AE7BE80410343B085D822D2AEE2D75E"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\amr_pancake.jpg"
-            "TargetName" = "8:amr_pancake.jpg"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\chicken_dinner.jpg"
+            "TargetName" = "8:chicken_dinner.jpg"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -248,14 +266,94 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_646DF6049B04D98106C0D921603DFF6D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_360FD5831F6D499FAB2E2AD3322D5040"
+            {
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\coleslaw.jpg"
+            "TargetName" = "8:coleslaw.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_405945EC705C43C9A20147E6E57BB036"
+            {
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\fish_sticks.jpg"
+            "TargetName" = "8:fish_sticks.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4ACCEB27AE404666877E71463FC1B974"
+            {
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\denver_omelet.jpg"
+            "TargetName" = "8:denver_omelet.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BD67B3A766148F085858F78007A0F3C"
+            {
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\corn_salad.png"
+            "TargetName" = "8:corn_salad.png"
+            "Tag" = "8:"
+            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5AF3FE6F8F4E576C164D19EEC5E28D2E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_646DF6049B04D98106C0D921603DFF6D"
+                    "_5AF3FE6F8F4E576C164D19EEC5E28D2E"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -279,10 +377,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_67606534DCE04418AF71F98C8F3B5F84"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_78FB3BB703FB475B8C7586D42C49BC96"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\blueberry_smoothie.jpg"
-            "TargetName" = "8:blueberry_smoothie.jpg"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\chicken_marsala.jpg"
+            "TargetName" = "8:chicken_marsala.jpg"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -319,10 +417,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9424A5D08510414899930FE70596EDED"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9028CDEA8BB34F55A2914DA9820AEDA3"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\corn_salad.png"
-            "TargetName" = "8:corn_salad.png"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\potato_pancake.png"
+            "TargetName" = "8:potato_pancake.png"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -339,10 +437,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0670DBF72234D57B8A8545DC48A37FF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A0A28517CDDE4E0889D831FFADF7CB62"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\potato_pancake.png"
-            "TargetName" = "8:potato_pancake.png"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\amr_pancake.jpg"
+            "TargetName" = "8:amr_pancake.jpg"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -410,10 +508,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2FC9F0234CB43649AFF589CDB70C4F4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF837454DC6B4AF6A170521120ECF1D5"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\coleslaw.jpg"
-            "TargetName" = "8:coleslaw.jpg"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\blueberry_smoothie.jpg"
+            "TargetName" = "8:blueberry_smoothie.jpg"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -430,9 +528,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DDE87E8817CD417EAF2FED40337EB376"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D15A760C06694FA5BFC08695DE729BDF"
             {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\banana_muffin.jpg"
+            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\Munchy - Copy\\Images\\banana_muffin.jpg"
             "TargetName" = "8:banana_muffin.jpg"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
@@ -456,26 +554,6 @@
             "TargetName" = "8:munchyicon_0gG_icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_A8E229E5D8FF4335968EF62A0D6EC354"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E2FEAFE9FC214798A9895F6775DB553B"
-            {
-            "SourcePath" = "8:C:\\Users\\Nikola\\AppData\\Roaming\\TESTJsonMunchy\\Images\\denver_omelet.jpg"
-            "TargetName" = "8:denver_omelet.jpg"
-            "Tag" = "8:"
-            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
