@@ -10,3 +10,7 @@ D:\Desktop\New folder\MunchyAPI.pdb
 D:\Desktop\Api Builds\MunchyAPI.dll
 D:\Desktop\Api Builds\MunchyAPI.pdb
 D:\Desktop\Software Engineering\MunchySolution\Munchy\MunchyAPI\obj\Debug\MunchyAPI.csprojResolveAssemblyReference.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyAPI\obj\Debug\MunchyAPI.csprojResolveAssemblyReference.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyAPI\obj\Debug\MunchyAPI.csproj.CoreCompileInputs.cache
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyAPI\obj\Debug\MunchyAPI.dll
+D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyAPI\obj\Debug\MunchyAPI.pdb

@@ -274,7 +274,7 @@ namespace MunchyUI
         {
             RecipeSaver saver = m_CurrentManager.UserRecipeSaves;
 
-            if (saver.USRecentlyViewed.Count < 6 && saver.BGRecentlyViewed.Count < 6)
+            if (saver.USRecentlyViewed.Count < 6 && saver.BGRecentlyViewed.Count < 6 && !saver.USRecentlyViewed.Contains(m_SuggestedRecipe.USName.ToLower()))
             {
                 AddToList(saver.USRecentlyViewed, m_SuggestedRecipe.USName);
                 AddToList(saver.BGRecentlyViewed, m_SuggestedRecipe.BGName);
@@ -422,23 +422,26 @@ namespace MunchyUI
         //Shows the full recipe view of the recenly viewed recipe the user clicked on.
         private void ShowRecentlyViewedRecipe(object sender, MouseButtonEventArgs e)
         {
-            switch (m_ActiveLanguage)
+            if(((Ellipse)sender).ToolTip.ToString().ToLower() != null)
             {
-                case Languages.English:
-                    string recipeName = (string)((Ellipse)sender).ToolTip.ToString().ToLower();
-                    m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[recipeName];
-                    AddInformationToFullRecipeView();
-                    SetupFullRecipeViewImg();
-                    break;
-                case Languages.Bulgarian:
-                    string rName = (string)((Ellipse)sender).ToolTip.ToString().ToLower();
-                    string USRecipeName = m_CurrentManager.UserRecipeSaves.USRecentlyViewed[GetRecentlyViewedList().IndexOf(rName)];
-                    m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[USRecipeName.ToLower()];
-                    AddInformationToFullRecipeView();
-                    SetupFullRecipeViewImg();
+                switch (m_ActiveLanguage)
+                {
+                    case Languages.English:
+                        string recipeName = ((Ellipse)sender).ToolTip.ToString().ToLower();
+                        m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[recipeName];
+                        AddInformationToFullRecipeView();
+                        SetupFullRecipeViewImg();
+                        break;
+                    case Languages.Bulgarian:
+                        string rName = (string)((Ellipse)sender).ToolTip.ToString().ToLower();
+                        string USRecipeName = m_CurrentManager.UserRecipeSaves.USRecentlyViewed[GetRecentlyViewedList().IndexOf(rName)];
+                        m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[USRecipeName.ToLower()];
+                        AddInformationToFullRecipeView();
+                        SetupFullRecipeViewImg();
 
-                    break;
-            }
+                        break;
+                }
+            }            
         }
 
         //Handles opening the recipe the user clicked on from saved recipes.
@@ -1006,7 +1009,7 @@ namespace MunchyUI
         //Handles adding to the shopping list
         private void Btn_AddToShoppingList_Click(object sender, RoutedEventArgs e)
         {
-            if (!Lb_ShoppingList.Items.Contains(Tb_AddToShoppingListSearch.Text.ToLower()) && Tb_AddToShoppingListSearch.Text != TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage))
+            if (!Lb_ShoppingList.Items.Contains(Tb_AddToShoppingListSearch.Text.ToLower()) && Tb_AddToShoppingListSearch.Text != TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage) && L_ShoppingListSuggestedItem.SelectedIndex >=0)
             {
                 FoodDef foodItemBeingUsed = m_CurrentManager.FoodManag.Foods[m_ItemsInFoodSearch[L_ShoppingListSuggestedItem.SelectedIndex]];
 

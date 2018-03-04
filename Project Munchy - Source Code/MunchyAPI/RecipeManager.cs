@@ -144,23 +144,10 @@ namespace Nikola.Munchy.MunchyAPI
                         Dinner.Add(item.Key);
                     }
 
-                    foreach (string food in item.Value.USIngredients)
-                    {
-                        if (FridgeItems.ContainsKey(food))
-                        {
-                            HasAllIngredients = true;
-                        }
-                        else
-                        {
-                            HasAllIngredients = false;
-                            break;
-                        }
-                    }
-
-                    if (HasAllIngredients == true)
+                    if(CurrentManager.UsersFridge.FridgeConatains(item.Value.USIngredients, item.Value.Amounts, item.Value.Units, CurrentManager.FoodManag))
                     {
                         RecipesWithFridgeFoods.Add(item.Key);
-                    }
+                    }                  
                 }
                 RecipieIndex = 0; 
             }
