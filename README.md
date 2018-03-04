@@ -3,6 +3,8 @@ Project for the National Olympiad in Information Technology by Nikola Totev. Pro
 
 Description: This repository contains source code and data files needed for development of Project Munchy.
 
+=== NOTE === YOU MUST RELOAD OR REINSTALL NUGET PACKAGE (Newtonsoft.json) BEFORE USING THE PROJECT
+
 Contents: 
 1. MunchyAPI - the logic library that is used in the Munchy project.
 2. MunchyUI - the UI side of the project. This is meant to be built into an .exe for users.
@@ -17,6 +19,8 @@ Contents:
 Проект за Националната олимпиада по Информационни технологии на Никола Тотев. Номер на прокета 295
 
 Описание: Това репозитори съдържа изходния код и файловете с данни нужни за разрабоката на Прокета "Munchy"
+
+=== ВНИМАНИЕ === ТРЯБВА ДА ПРЕЗАРЕДИТЕ ИЛИ ПРЕИНСТАЛИРАТЕ NUGET ПАКЕТИТА (Newtonsoft.json) ПРЕДИ РАБОТА С ПРОЕКТА
 
 Съдържание: 
 1. MunchyAPI - библиотеката която логиката нужна за работата на програмата
