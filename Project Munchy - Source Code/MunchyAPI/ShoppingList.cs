@@ -35,6 +35,7 @@ namespace Nikola.Munchy.MunchyAPI
         public void ClearList()
         {
             USFoodsToBuy.Clear();
+            BGFoodsToBuy.Clear();
         }
 
         public void PrintShoppingList(string lang)

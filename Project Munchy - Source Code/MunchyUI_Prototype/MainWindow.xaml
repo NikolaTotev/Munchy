@@ -1431,7 +1431,7 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Grid.RenderTransform>
-                <ListBox x:Name="Lb_ShoppingList" HorizontalAlignment="Left" Height="365" Margin="13,164,0,0" VerticalAlignment="Top" Width="256"/>
+                <ListBox x:Name="Lb_ShoppingList" HorizontalAlignment="Left" Height="324" Margin="13,164,0,0" VerticalAlignment="Top" Width="256" FontFamily="Roboto Medium" FontSize="16" Foreground="#FF5E6973"/>
                 <TextBox x:Name="Tb_AddToShoppingListSearch" HorizontalAlignment="Left" Height="41" Margin="13,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionBrush="#800078D7" BorderBrush="{x:Null}" Foreground="#FF5E6973" FontFamily="Roboto Medium" FontSize="20" TextChanged="Tb_AddToShoppingListTxtChanged" GotFocus="ShoppingListSearchGotFocus" LostFocus="ShoppingListSearchLostFocus" MouseEnter="ShoppingSearchMouseEnter" MouseLeave="ShoppingSearchMouseLeave"/>
                 <Button x:Name="Btn_AddToShoppingList" Content="{DynamicResource ResourceKey=AddFoodBTN}" HorizontalAlignment="Left" Height="39" Margin="13,115,0,0" VerticalAlignment="Top" Width="118" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_AddToShoppingList_Click"/>
                 <TextBlock x:Name="TB_ShoppingList" HorizontalAlignment="Left" Height="28" Margin="0,11,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=ShoppingList}" VerticalAlignment="Top" Width="280" FontFamily="Roboto Black" Foreground="#FFF7F4F3" TextAlignment="Center" FontSize="24"/>
@@ -1483,8 +1483,8 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <ListBox x:Name="L_ShoppingListSuggestedItem" HorizontalAlignment="Left" Height="416" Margin="13,113,0,0" VerticalAlignment="Top" Width="255" Visibility="Hidden" SelectionChanged="ShoppingListSuggestedItemSelected" MouseLeave="SuggestedItemsMouseLeave"/>
-                <Button Content="" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Click="Button_Click" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <ListBox x:Name="L_ShoppingListSuggestedItem" HorizontalAlignment="Left" Height="416" Margin="13,113,0,0" VerticalAlignment="Top" Width="255" Visibility="Hidden" SelectionChanged="ShoppingListSuggestedItemSelected" MouseLeave="SuggestedItemsMouseLeave" Foreground="#FF5E6973" FontFamily="Roboto Medium" FontSize="16"/>
+                <Button x:Name="Btn_PrintList" Content="" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="28" Click="BtnPrintListClick" BorderBrush="{x:Null}" Foreground="{x:Null}">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Template">
@@ -1523,6 +1523,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
+                <Button x:Name="Btn_ClearShoppingList" Content="{DynamicResource ResourceKey=RemoveButton}" HorizontalAlignment="Left" Height="39" Margin="89,493,0,0" VerticalAlignment="Top" Width="119" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_ClearShoppingList_Click"/>
             </Grid>
 
         </Grid>

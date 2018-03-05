@@ -42,6 +42,8 @@ namespace Nikola.Munchy.MunchyAPI
 
         public ProgramManager(string UserFileSave, string UserFridgeFileSave, string RecipieDatabase, string FoodItemsDatabase, string RecipeSaveFile, string StatisticsSavePath, string ShoppingListSave)
         {
+         
+
             UserFile = UserFileSave;
 
             UserFridgeFile = UserFridgeFileSave;
@@ -53,6 +55,11 @@ namespace Nikola.Munchy.MunchyAPI
             User = new UserTemplate(this);
             User = GetUser();
             User.CurrentManager = this;
+
+            UserShoppingList = new ShoppingList();
+            UserShoppingList = GetShoppingList();
+            User.UserShoppingList = UserShoppingList;
+
             InitFridge(User);
 
             FoodItemsFile = FoodItemsDatabase;
@@ -73,9 +80,7 @@ namespace Nikola.Munchy.MunchyAPI
             StatManager.SaveStatistics();
 
             RecipieManag = new RecipeManager(RecipiesFile, this);
-            UserShoppingList = new ShoppingList();
-            UserShoppingList = GetShoppingList();
-            User.UserShoppingList = UserShoppingList;
+         
         }
 
         //Deserializes the recipe saver. Recipe saver is used to save recently viewed recipe, saved recipes and cooked recipes.

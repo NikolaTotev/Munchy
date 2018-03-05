@@ -77,13 +77,19 @@ namespace Nikola.Munchy.MunchyAPI
                         {
                             if (element.Value.USName == FoodItemsToChange[i] && element.Value.Amount - AmountToRemove < 0)
                             {
-                                programManager.UserShoppingList.AddToShoppingList(element.Value.USName, element.Value.BGName);
+                                if (!programManager.UserShoppingList.USFoodsToBuy.Contains(FoodItemsToChange[i]))
+                                {
+                                    programManager.UserShoppingList.AddToShoppingList(element.Value.USName, element.Value.BGName);
+                                }
                             }
                         }
                     }
                     else
                     {
-                        programManager.UserShoppingList.AddToShoppingList(FoodItemsToChange[i], foodManager.Foods[FoodItemsToChange[i]].BGName);
+                        if (!programManager.UserShoppingList.USFoodsToBuy.Contains(FoodItemsToChange[i]))
+                        {
+                            programManager.UserShoppingList.AddToShoppingList(FoodItemsToChange[i], foodManager.Foods[FoodItemsToChange[i]].BGName);
+                        }                        
                     }
                 }
                 programManager.SaveShoppingList();
@@ -111,14 +117,12 @@ namespace Nikola.Munchy.MunchyAPI
                         {
                             if (element.Value.USName == FoodItemsToChange[i] && element.Value.Amount - AmountToRemove < 0)
                             {
-                                AddToShoppingList(FoodItemsToChange, AmountsToChange, Units, foodManager, programManager);
                                 return false;
                             }
                         }
                     }
                     else
                     {
-                        AddToShoppingList(FoodItemsToChange, AmountsToChange, Units, foodManager, programManager);
                         return false;
                     }
 
@@ -152,7 +156,10 @@ namespace Nikola.Munchy.MunchyAPI
             {
                 if(USUsersFoods.ElementAt(i).Value.Amount == 0)
                 {
-                    programManager.UserShoppingList.AddToShoppingList(USUsersFoods.ElementAt(i).Value.USName, USUsersFoods.ElementAt(i).Value.BGName);
+                    if (!programManager.UserShoppingList.USFoodsToBuy.Contains(FoodItemsToChange[i]))
+                    {
+                        programManager.UserShoppingList.AddToShoppingList(USUsersFoods.ElementAt(i).Value.USName, USUsersFoods.ElementAt(i).Value.BGName);
+                    }
                     USUsersFoods.Remove(USUsersFoods.ElementAt(i).Key);
                 }
             }

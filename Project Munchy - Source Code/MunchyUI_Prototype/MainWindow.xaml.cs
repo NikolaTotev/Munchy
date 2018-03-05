@@ -210,9 +210,9 @@ namespace MunchyUI
                                 lb_Fridge.Items.Add(element.Key.First().ToString().ToUpper() + element.Key.Substring(1));
                             }
                         }
-                        break;                   
+                        break;
                 }
-               
+
             }
         }
         #endregion
@@ -354,13 +354,14 @@ namespace MunchyUI
             {
                 Tb_IngrMessageTitle.Foreground = Brushes.Green;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForAllIngrPresent(m_ActiveLanguage);
-                Tb_IngrMessageContents.Text = TranslatorCore.GetMessageContentForAllIngrPresent(m_ActiveLanguage);
             }
             else
             {
                 Tb_IngrMessageTitle.Foreground = Brushes.Red;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForIngrNotPresent(m_ActiveLanguage);
                 Tb_IngrMessageContents.Text = TranslatorCore.GetMessageContentForIngrNotPresent(m_ActiveLanguage);
+                m_CurrentManager.User.UserFridge.AddToShoppingList(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag, m_CurrentManager);
+                m_CurrentManager.SaveShoppingList();
             }
 
         }
@@ -419,7 +420,6 @@ namespace MunchyUI
                 Tb_IngrMessageTitle.Foreground = Brushes.Red;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForIngrNotPresent(m_ActiveLanguage);
                 Tb_IngrMessageContents.Text = TranslatorCore.GetMessageContentForIngrNotPresent(m_ActiveLanguage);
-
             }
         }
 
@@ -443,7 +443,7 @@ namespace MunchyUI
         //Shows the full recipe view of the recenly viewed recipe the user clicked on.
         private void ShowRecentlyViewedRecipe(object sender, MouseButtonEventArgs e)
         {
-            if(((Ellipse)sender).ToolTip.ToString().ToLower() != null)
+            if (((Ellipse)sender).ToolTip.ToString().ToLower() != null)
             {
                 switch (m_ActiveLanguage)
                 {
@@ -462,7 +462,7 @@ namespace MunchyUI
 
                         break;
                 }
-            }            
+            }
         }
 
         //Handles opening the recipe the user clicked on from saved recipes.
@@ -1030,7 +1030,7 @@ namespace MunchyUI
         //Handles adding to the shopping list
         private void Btn_AddToShoppingList_Click(object sender, RoutedEventArgs e)
         {
-            if (!Lb_ShoppingList.Items.Contains(Tb_AddToShoppingListSearch.Text.ToLower()) && Tb_AddToShoppingListSearch.Text != TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage) && L_ShoppingListSuggestedItem.SelectedIndex >=0)
+            if (!Lb_ShoppingList.Items.Contains(Tb_AddToShoppingListSearch.Text.ToLower()) && Tb_AddToShoppingListSearch.Text != TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage) && L_ShoppingListSuggestedItem.SelectedIndex >= 0)
             {
                 FoodDef foodItemBeingUsed = m_CurrentManager.FoodManag.Foods[m_ItemsInFoodSearch[L_ShoppingListSuggestedItem.SelectedIndex]];
 
@@ -1101,7 +1101,7 @@ namespace MunchyUI
 
 
         //Handles printing of the shopping list.
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnPrintListClick(object sender, RoutedEventArgs e)
         {
             switch (m_ActiveLanguage)
             {
@@ -1114,6 +1114,14 @@ namespace MunchyUI
                 default:
                     break;
             }
+        }
+
+        //Handles clearing the list.
+        private void Btn_ClearShoppingList_Click(object sender, RoutedEventArgs e)
+        {
+            m_CurrentManager.UserShoppingList.ClearList();
+            m_CurrentManager.SaveShoppingList();
+            ManageShoppingList();
         }
 
         #endregion
@@ -1508,20 +1516,20 @@ namespace MunchyUI
             if (LocaleCode == "bg-BG")
             {
                 m_ActiveLanguage = Languages.Bulgarian;
-                if(m_SuggestedRecipe.BGName != null)
+                if (m_SuggestedRecipe.BGName != null)
                 {
                     tB_RecipeName.Text = m_SuggestedRecipe.BGName.First().ToString().ToUpper() + m_SuggestedRecipe.BGName.Substring(1);
                 }
-                
+
             }
 
             if (LocaleCode == "en-US")
             {
                 m_ActiveLanguage = Languages.English;
-                if(m_SuggestedRecipe.USName!= null)
+                if (m_SuggestedRecipe.USName != null)
                 {
                     tB_RecipeName.Text = m_SuggestedRecipe.USName.First().ToString().ToUpper() + m_SuggestedRecipe.USName.Substring(1);
-                }                
+                }
             }
 
             AddInformationToFullRecipeView();
@@ -1692,6 +1700,5 @@ namespace MunchyUI
             }
         }
         #endregion
-
     }
 }
