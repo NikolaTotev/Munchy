@@ -1028,7 +1028,7 @@
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform/>
+                            <RotateTransform Angle="90"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Rectangle.RenderTransform>
@@ -1160,7 +1160,15 @@
                 <Ellipse x:Name="img_RecipeImage" HorizontalAlignment="Left" Height="83" Margin="97,10,0,0" Stroke="#FF5E6973" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.5,0.5"/>
                 <TextBlock x:Name="tB_IngredientsTitle" HorizontalAlignment="Left" Height="30" Margin="97,103,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=IngredientsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.058,0.561"/>
                 <TextBlock x:Name="tB_DirectionsTitle" HorizontalAlignment="Left" Height="30" Margin="559,108,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DirectionsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
-                <Rectangle x:Name="btn_CloseRecipeView" HorizontalAlignment="Left" Height="40" Margin="870,10,0,0" VerticalAlignment="Top" Width="44" Opacity="0.5">
+                <Rectangle x:Name="btn_CloseRecipeView" HorizontalAlignment="Left" Height="40" Margin="870,10,0,0" VerticalAlignment="Top" Width="44" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
                     </Rectangle.Fill>
@@ -1266,7 +1274,15 @@
                 <TextBlock x:Name="tB_FoodSugar" HorizontalAlignment="Left" Height="30" Margin="776,340.9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
                 <TextBlock x:Name="textBlock12" HorizontalAlignment="Left" Height="30" Margin="628.605,385,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SodiumTB}" VerticalAlignment="Top" Width="150.913" FontFamily="Roboto Light" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
                 <TextBlock x:Name="tB_FoodSodium" HorizontalAlignment="Left" Height="30" Margin="777,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" FontFamily="Roboto Thin" FontSize="20" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.525,0.095"/>
-                <Rectangle x:Name="btn_CloseFoods" HorizontalAlignment="Left" Height="43" Margin="868,10,0,0" VerticalAlignment="Top" Width="46" MouseUp="Btn_Showfridge_Click" Opacity="0.5">
+                <Rectangle x:Name="btn_CloseFoods" HorizontalAlignment="Left" Height="43" Margin="868,10,0,0" VerticalAlignment="Top" Width="46" MouseUp="Btn_Showfridge_Click" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
                     <Rectangle.Fill>
                         <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
                     </Rectangle.Fill>
@@ -1523,7 +1539,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button x:Name="Btn_ClearShoppingList" Content="{DynamicResource ResourceKey=RemoveButton}" HorizontalAlignment="Left" Height="39" Margin="89,493,0,0" VerticalAlignment="Top" Width="119" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_ClearShoppingList_Click"/>
+                <Button x:Name="Btn_ClearShoppingList" Content="{DynamicResource ResourceKey=ClearShoppingList}" HorizontalAlignment="Left" Height="39" Margin="89,493,0,0" VerticalAlignment="Top" Width="119" Foreground="#FF4392F1" Background="#FFF7F4F3" BorderBrush="{x:Null}" FontFamily="Roboto Medium" FontSize="18" Click="Btn_ClearShoppingList_Click"/>
             </Grid>
 
         </Grid>

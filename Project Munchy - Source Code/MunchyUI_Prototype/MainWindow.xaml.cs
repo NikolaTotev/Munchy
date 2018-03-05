@@ -1099,7 +1099,6 @@ namespace MunchyUI
             L_ShoppingListSuggestedItem.Visibility = Visibility.Hidden;
         }
 
-
         //Handles printing of the shopping list.
         private void BtnPrintListClick(object sender, RoutedEventArgs e)
         {
