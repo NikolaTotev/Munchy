@@ -244,10 +244,10 @@ namespace MunchyUI
             switch (activeLang)
             {
                 case Languages.English:
-                    return "Some ingredients are missnig, would you a list of them to be added to your shopping list?";
+                    return "Some ingredients are missnig, they have been added to the shopping list.";
 
                 case Languages.Bulgarian:
-                    return "Някои продукти липсват, искате ли списък с тях да бъде добавен в списъка за пазаруване?";
+                    return "Някои продукти липсват, добавени са в списъка за пазаруване.";
 
                 default:
                     return "Lang Err";
