@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="TranslatorCore.cs" />
+    <Resource Include="Images\ic_print_white_48dp_2x.png" />
     <Resource Include="Images\ic_shopping_cart_black_48dp_2x.png" />
     <Resource Include="Images\ic_add_shopping_cart_black_48dp_2x.png" />
     <Resource Include="munchyiconv2.ico" />
