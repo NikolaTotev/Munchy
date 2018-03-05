@@ -161,6 +161,11 @@ namespace MunchyUI
             {
                 m_ActiveLanguage = Languages.Bulgarian;
                 Localizer.SwitchLanguage(this, "bg-BG");
+
+                tb_FoodSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+                tb_SearchSavedRecipes.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+                tb_SearchCookedRecipes.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+                Tb_AddToShoppingListSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
             }
 
             m_SettingOptions = new List<CheckBox> { cb_Vegan, cb_Vegetarian, cb_Diabetic, cb_Eggs, cb_Dairy, cb_Fish, cb_Nuts, cb_Gluten, cb_Soy };
@@ -186,13 +191,28 @@ namespace MunchyUI
             if (m_CurrentManager.User.UserFridge.USUsersFoods != null && m_CurrentManager.User.UserFridge.USUsersFoods.Count > 0)
             {
                 RefreshFridge();
-                foreach (KeyValuePair<string, FoodDef> element in m_CurrentManager.User.UserFridge.USUsersFoods)
+                switch (m_ActiveLanguage)
                 {
-                    if (lb_Fridge.Items.Count < 10 && !lb_Fridge.Items.Contains(element.Key.First().ToString().ToUpper() + element.Key.Substring(1)))
-                    {
-                        lb_Fridge.Items.Add(element.Key.First().ToString().ToUpper() + element.Key.Substring(1));
-                    }
+                    case Languages.English:
+                        foreach (KeyValuePair<string, FoodDef> element in m_CurrentManager.User.UserFridge.USUsersFoods)
+                        {
+                            if (lb_Fridge.Items.Count < 10 && !lb_Fridge.Items.Contains(element.Key.First().ToString().ToUpper() + element.Key.Substring(1)))
+                            {
+                                lb_Fridge.Items.Add(element.Key.First().ToString().ToUpper() + element.Key.Substring(1));
+                            }
+                        }
+                        break;
+                    case Languages.Bulgarian:
+                        foreach (KeyValuePair<string, FoodDef> element in m_CurrentManager.User.UserFridge.BGUserFoods)
+                        {
+                            if (lb_Fridge.Items.Count < 10 && !lb_Fridge.Items.Contains(element.Key.First().ToString().ToUpper() + element.Key.Substring(1)))
+                            {
+                                lb_Fridge.Items.Add(element.Key.First().ToString().ToUpper() + element.Key.Substring(1));
+                            }
+                        }
+                        break;                   
                 }
+               
             }
         }
         #endregion
@@ -388,7 +408,7 @@ namespace MunchyUI
                 m_CurrentManager.StatManager.AddToCalorieStatistics(m_SuggestedRecipe.Calories);
                 m_DailyCalories = m_CurrentManager.StatManager.DailyCalories;
                 L_DailyCalories.Text = m_DailyCalories.ToString();
-                m_CurrentManager.UsersFridge.ModifyFoodItemAmount(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag);
+                m_CurrentManager.UsersFridge.ModifyFoodItemAmount(m_SuggestedRecipe.USIngredients, m_SuggestedRecipe.Amounts, m_SuggestedRecipe.Units, m_CurrentManager.FoodManag, m_CurrentManager);
                 RefreshFridge();
                 Tb_IngrMessageTitle.Foreground = Brushes.Green;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForAllIngrPresent(m_ActiveLanguage);
@@ -1060,7 +1080,7 @@ namespace MunchyUI
         //Handles hiding the suggested items to add when there is no text in the textbox.
         private void ShoppingSearchMouseLeave(object sender, MouseEventArgs e)
         {
-            if (Tb_AddToShoppingListSearch.Text == null || Tb_AddToShoppingListSearch.Text == TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage))
+            if (string.IsNullOrWhiteSpace(Tb_AddToShoppingListSearch.Text) || Tb_AddToShoppingListSearch.Text == TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage))
             {
                 L_ShoppingListSuggestedItem.Visibility = Visibility.Hidden;
             }
@@ -1076,6 +1096,23 @@ namespace MunchyUI
         private void Btn_CloseShoppingList_Click(object sender, RoutedEventArgs e)
         {
             L_ShoppingListSuggestedItem.Visibility = Visibility.Hidden;
+        }
+
+
+        //Handles printing of the shopping list.
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            switch (m_ActiveLanguage)
+            {
+                case Languages.English:
+                    m_CurrentManager.UserShoppingList.PrintShoppingList("US");
+                    break;
+                case Languages.Bulgarian:
+                    m_CurrentManager.UserShoppingList.PrintShoppingList("BG");
+                    break;
+                default:
+                    break;
+            }
         }
 
         #endregion
@@ -1653,6 +1690,7 @@ namespace MunchyUI
                     }
             }
         }
-        #endregion      
+        #endregion
+
     }
 }

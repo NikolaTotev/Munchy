@@ -86,6 +86,7 @@ namespace Nikola.Munchy.MunchyAPI
                         programManager.UserShoppingList.AddToShoppingList(FoodItemsToChange[i], foodManager.Foods[FoodItemsToChange[i]].BGName);
                     }
                 }
+                programManager.SaveShoppingList();
             }
             // Only if requirements are met does the function return true.
         }
@@ -132,7 +133,7 @@ namespace Nikola.Munchy.MunchyAPI
         /// </summary>
         /// <param name="FoodItemToChange"></param>
         /// <param name="AmountToChange"></param>
-        public void ModifyFoodItemAmount(List<string> FoodItemsToChange, List<float> AmountsToChange, List<string>Units, FoodManager foodManager)
+        public void ModifyFoodItemAmount(List<string> FoodItemsToChange, List<float> AmountsToChange, List<string>Units, FoodManager foodManager, ProgramManager programManager)
         {
             for (int i = 0; i < FoodItemsToChange.Count; i++)
             {
@@ -151,11 +152,12 @@ namespace Nikola.Munchy.MunchyAPI
             {
                 if(USUsersFoods.ElementAt(i).Value.Amount == 0)
                 {
+                    programManager.UserShoppingList.AddToShoppingList(USUsersFoods.ElementAt(i).Value.USName, USUsersFoods.ElementAt(i).Value.BGName);
                     USUsersFoods.Remove(USUsersFoods.ElementAt(i).Key);
                 }
             }
-            
             SaveFridge();
+            programManager.SaveShoppingList();
         }
 
         /// <summary>
