@@ -20,6 +20,8 @@
     <sys:String x:Key="AddFoodBTN">Add</sys:String>
     <sys:String x:Key="ShoppingList">Shopping list</sys:String>
     <sys:String x:Key="ClearShoppingList">Clear</sys:String>
+    <sys:String x:Key="ShowRecipesWithItemsInFridgeBtn">Recipes for which you have all ingredients</sys:String>
+
 
     <!--Settings Panel-->
     <sys:String x:Key="SettingsTextBlock">Settings</sys:String>
@@ -72,6 +74,8 @@
     <sys:String x:Key="SummaryTB">Summary</sys:String>
     <sys:String x:Key="FoodInfoTB">Food Info</sys:String>
     <sys:String x:Key="FoodsTB">Foods</sys:String>
+    <sys:String x:Key="CustomAmountsTB">Other amount</sys:String>
+
 
     <!--Saved Recipes Panel-->
     <sys:String x:Key="CookedRecipeBTN">CookedRecipes</sys:String>

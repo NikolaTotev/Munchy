@@ -1309,6 +1309,15 @@ namespace MunchyUI
             RemoveItem();
         }
 
+        //Clears radio buttons amounts
+        private void Tb_CustomAmountGotFocus(object sender, RoutedEventArgs e)
+        {
+            foreach (RadioButton element in m_AmountRadioButtons)
+            {
+                element.IsChecked = false;
+            }
+        }
+
         //Updates fridge on fridge open.
         private void Btn_Showfridge_Click(object sender, RoutedEventArgs e)
         {
@@ -1793,6 +1802,6 @@ namespace MunchyUI
                     }
             }
         }
-        #endregion
+        #endregion       
     }
 }

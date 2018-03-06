@@ -20,6 +20,8 @@
     <sys:String x:Key="AddFoodBTN">Добави</sys:String>
     <sys:String x:Key="ShoppingList">Списък за пазар</sys:String>
     <sys:String x:Key="ClearShoppingList">Изчисти</sys:String>
+    <sys:String x:Key="ShowRecipesWithItemsInFridgeBtn">Рецепти съобразени с продуктите в хладилника</sys:String>
+
 
     <!--Settings Panel-->
     <sys:String x:Key="SettingsTextBlock">Настройки</sys:String>
@@ -47,7 +49,6 @@
     <sys:String x:Key="BGCB">Български</sys:String>
     <sys:String x:Key="SettingsSavedPopup">Настройки запазени!</sys:String>
 
-
     <!--Full Recipe View Panel-->
     <sys:String x:Key="TimeToCookTextBlock">Време за готвене</sys:String>
     <sys:String x:Key="IngredientsTextBlock">Съставки</sys:String>
@@ -70,6 +71,7 @@
     <sys:String x:Key="SummaryTB">Статистика</sys:String>
     <sys:String x:Key="FoodInfoTB">Информация</sys:String>
     <sys:String x:Key="FoodsTB">Храни</sys:String>
+    <sys:String x:Key="CustomAmountsTB">Друго количество</sys:String>
 
     <!--Saved Recipes Panel-->
     <sys:String x:Key="CookedRecipeBTN">Сготвени</sys:String>
