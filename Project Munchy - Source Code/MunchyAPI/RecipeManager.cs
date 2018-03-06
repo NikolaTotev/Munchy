@@ -77,6 +77,7 @@ namespace Nikola.Munchy.MunchyAPI
             Lunch.Clear();
             Dinner.Clear();
             CompatableRecipes.Clear();
+            RecipesWithFridgeFoods.Clear();
             UserIndex = CurrentManager.User.CompatabilityIndex;
             foreach (KeyValuePair<string, RecipeDef> item in Recipies)
             {

@@ -27,6 +27,12 @@ namespace MunchyUI
         Fridge,
         ShoppingList
     }
+
+    public enum FoodListToUse
+    {
+        CompatibleRecipes,
+        RecipesWithFridgeFoods
+    }
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -54,6 +60,12 @@ namespace MunchyUI
 
         //Enum for determining what language to use in runtime. English is the default language.        
         Languages m_ActiveLanguage = Languages.English;
+
+        //Enum for setting which list of recipes to use.
+        FoodListToUse m_FoodListToUse = FoodListToUse.CompatibleRecipes;
+
+        List<string> m_SuggestedRecipeListBeingUsed; 
+
         //Variables that are used to display the fridge summary.
         float m_CalorieSum = 0;
         float m_ProteinSum = 0;
@@ -73,6 +85,9 @@ namespace MunchyUI
 
         //Integer that keeps track of what recipe the user is on. This integer is responsible for browsing through the suggested recipe list.
         int m_NumerOfRecipeToSuggest = 0;
+
+        //Integer that keps trach of what recipes the user is on. Integer is for browsing what recipes the user can cook.
+        int m_NumerOfRecipesUserCanCook = 0;
 
         //A list of checkboxes that are used for saving the users settings and preferences
         List<CheckBox> m_SettingOptions;
@@ -223,9 +238,12 @@ namespace MunchyUI
         // breakfast, lunch and dinner by the RecipeManager. (NOTE) It uses ONLY compatable recipes.
         private void SuggestRecipe()
         {
+            m_FoodListToUse = FoodListToUse.CompatibleRecipes;
             //Breakfast.
             if (DateTime.Now.Hour > 7 && DateTime.Now.Hour < 11)
             {
+                m_SuggestedRecipeListBeingUsed = m_CurrentManager.RecipieManag.Breakfast;
+
                 if (m_CurrentManager.RecipieManag.Breakfast.Count > 0 && m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Breakfast.Count && m_NumerOfRecipeToSuggest >= 0)
                 {
                     m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[m_CurrentManager.RecipieManag.Breakfast[m_NumerOfRecipeToSuggest]];
@@ -244,6 +262,8 @@ namespace MunchyUI
             //Lunch.
             if (DateTime.Now.Hour >= 11 && DateTime.Now.Hour < 17)
             {
+                m_SuggestedRecipeListBeingUsed = m_CurrentManager.RecipieManag.Lunch;
+
                 if (m_CurrentManager.RecipieManag.Lunch.Count > 0 && m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Lunch.Count && m_NumerOfRecipeToSuggest >= 0)
                 {
                     m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[m_CurrentManager.RecipieManag.Lunch[m_NumerOfRecipeToSuggest]];
@@ -262,6 +282,8 @@ namespace MunchyUI
             //Dinner.
             if (DateTime.Now.Hour >= 17 && DateTime.Now.Hour < 24)
             {
+                m_SuggestedRecipeListBeingUsed = m_CurrentManager.RecipieManag.Dinner;
+
                 if (m_CurrentManager.RecipieManag.Dinner.Count > 0 && m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Dinner.Count && m_NumerOfRecipeToSuggest >= 0)
                 {
                     m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[m_CurrentManager.RecipieManag.Dinner[m_NumerOfRecipeToSuggest]];
@@ -288,6 +310,25 @@ namespace MunchyUI
 
             m_CurrentManager.UserRecipeSaves.SaveRecipeSaver();
         }
+
+        private void SearchRecipesUserCanCook()
+        {
+            if(m_CurrentManager.RecipieManag.RecipesWithFridgeFoods.Count > 0 && m_NumerOfRecipesUserCanCook < m_CurrentManager.RecipieManag.RecipesWithFridgeFoods.Count && m_NumerOfRecipesUserCanCook >= 0)
+            {
+                m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[m_CurrentManager.RecipieManag.RecipesWithFridgeFoods[m_NumerOfRecipesUserCanCook]];
+                tB_RecipeName.Text = GetSuggestedRecipeName(m_SuggestedRecipe).First().ToString().ToUpper() + GetSuggestedRecipeName(m_SuggestedRecipe).ToString().Substring(1);
+                ManageSuggestedRecipe(m_SuggestedRecipe);
+            }
+            else
+            {
+                tB_RecipeName.Text = null;
+                tB_RecipeName.FontSize = 18;
+                tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
+            }
+            m_CurrentManager.UserRecipeSaves.SaveRecipeSaver();
+
+        }
+
 
         //Handles the suggested recipe. Updates the recently viewed list and adds the recipe to it, handles images of recently viewed recipes.
         private void ManageSuggestedRecipe(RecipeDef inputrecipe)
@@ -985,8 +1026,6 @@ namespace MunchyUI
                     default:
                         break;
                 }
-
-
             }
             else
             {
@@ -1352,9 +1391,23 @@ namespace MunchyUI
 
         #region Recipe related
         //Handles discovering of recipes.
-        private void Btn_DiscoverClick(object sender, RoutedEventArgs e)
+        private void Btn_WhatCanICook_Click(object sender, RoutedEventArgs e)
         {
-
+            m_CurrentManager.RecipieManag.SortRecipes();
+            m_FoodListToUse = FoodListToUse.RecipesWithFridgeFoods;
+            if (m_CurrentManager.RecipieManag.RecipesWithFridgeFoods.Count > 0)
+            {
+                m_SuggestedRecipe = m_CurrentManager.RecipieManag.Recipies[m_CurrentManager.RecipieManag.RecipesWithFridgeFoods[0]];
+                tB_RecipeName.FontSize = 24;
+                tB_RecipeName.Text = GetSuggestedRecipeName(m_SuggestedRecipe).First().ToString().ToUpper() + GetSuggestedRecipeName(m_SuggestedRecipe).ToString().Substring(1);
+                ManageSuggestedRecipe(m_SuggestedRecipe);
+            }
+            else
+            {
+                tB_RecipeName.Text = null;
+                tB_RecipeName.FontSize = 18;
+                tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
+            }
         }
 
         //Handles suggesting a recipe.
@@ -1380,23 +1433,65 @@ namespace MunchyUI
         //Handles showing next recipe to the user.
         private void Btn_ShowNextRecipe_Click(object sender, RoutedEventArgs e)
         {
-            if (m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Breakfast.Count || m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Lunch.Count || m_NumerOfRecipeToSuggest < m_CurrentManager.RecipieManag.Dinner.Count)
+            switch (m_FoodListToUse)
             {
-                tB_RecipeName.FontSize = 24;
-                m_NumerOfRecipeToSuggest++;
-                SuggestRecipe();
-                SetRecentlyViewedImages();
+                case FoodListToUse.CompatibleRecipes:
+                    if (m_NumerOfRecipeToSuggest < m_SuggestedRecipeListBeingUsed.Count)
+                    {
+                        tB_RecipeName.FontSize = 24;
+                        m_NumerOfRecipeToSuggest++;
+                        SuggestRecipe();
+                        SetRecentlyViewedImages();
+                    }
+                    break;
+                case FoodListToUse.RecipesWithFridgeFoods:
+                    if (m_NumerOfRecipesUserCanCook < m_CurrentManager.RecipieManag.RecipesWithFridgeFoods.Count)
+                    {
+                        m_NumerOfRecipesUserCanCook++;
+                        tB_RecipeName.FontSize = 24;
+                        SearchRecipesUserCanCook();
+                        SetRecentlyViewedImages();
+                    }
+                    else
+                    {
+                        tB_RecipeName.Text = null;
+                        tB_RecipeName.FontSize = 18;
+                        tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
+                    }
+                    break;
             }
+
         }
 
         //Handles Showing previour recipe  to the user.
         private void Btn_ShowPreviousRecipe_Click(object sender, RoutedEventArgs e)
         {
-            if (m_NumerOfRecipeToSuggest >= 0)
+
+            switch (m_FoodListToUse)
             {
-                tB_RecipeName.FontSize = 24;
-                m_NumerOfRecipeToSuggest--;
-                SuggestRecipe();
+                case FoodListToUse.CompatibleRecipes:
+                    if (m_NumerOfRecipeToSuggest >= 0)
+                    {
+                        tB_RecipeName.FontSize = 24;
+                        m_NumerOfRecipeToSuggest--;
+                        SuggestRecipe();
+                    }
+                    break;
+                case FoodListToUse.RecipesWithFridgeFoods:
+                    if (m_NumerOfRecipesUserCanCook >= 0)
+                    {
+                        m_NumerOfRecipesUserCanCook--;
+                        tB_RecipeName.FontSize = 24;
+                        SearchRecipesUserCanCook();
+                        SetRecentlyViewedImages();
+                    }
+                    else
+                    {
+                        tB_RecipeName.Text = null;
+                        tB_RecipeName.FontSize = 18;
+                        tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
+                    }
+                    break;
             }
         }
 

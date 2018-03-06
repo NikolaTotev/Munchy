@@ -276,5 +276,21 @@ namespace MunchyUI
             }
         }
 
+
+        public static string GetNoRecipesThatUserCanCookMsg(Languages activeLang)
+        {
+            switch (activeLang)
+            {
+                case Languages.English:
+                    return "You don't have enough ingredients for any of the recipes, you should go shopping.";
+
+                case Languages.Bulgarian:
+                    return "Нямате достатъчно продукти за никоя от рецептите, трябва да отидете на пазар.";
+
+                default:
+                    return "Lang Err";
+            }
+        }
+
     }
 }

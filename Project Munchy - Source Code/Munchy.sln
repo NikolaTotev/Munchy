@@ -17,8 +17,22 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MunchyToolSetup", "MunchyTo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MunchyDataFiles", "MunchyDataFiles", "{53BE7946-0C15-4331-A614-1F60ACAD68DB}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\Nikola\AppData\Roaming\Munchy\FoodData.json = C:\Users\Nikola\AppData\Roaming\Munchy\FoodData.json
-		C:\Users\Nikola\AppData\Roaming\Munchy\Recipes.json = C:\Users\Nikola\AppData\Roaming\Munchy\Recipes.json
+		MunchyDataFiles\FoodData.json = MunchyDataFiles\FoodData.json
+		MunchyDataFiles\Recipes.json = MunchyDataFiles\Recipes.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{CFFD6649-E18A-4EAD-8D0B-92105A314826}"
+	ProjectSection(SolutionItems) = preProject
+		MunchyDataFiles\Images\amr_pancake.jpg = MunchyDataFiles\Images\amr_pancake.jpg
+		MunchyDataFiles\Images\banana_muffin.jpg = MunchyDataFiles\Images\banana_muffin.jpg
+		MunchyDataFiles\Images\blueberry_smoothie.jpg = MunchyDataFiles\Images\blueberry_smoothie.jpg
+		MunchyDataFiles\Images\chicken_dinner.jpg = MunchyDataFiles\Images\chicken_dinner.jpg
+		MunchyDataFiles\Images\chicken_marsala.jpg = MunchyDataFiles\Images\chicken_marsala.jpg
+		MunchyDataFiles\Images\coleslaw.jpg = MunchyDataFiles\Images\coleslaw.jpg
+		MunchyDataFiles\Images\corn_salad.png = MunchyDataFiles\Images\corn_salad.png
+		MunchyDataFiles\Images\denver_omelet.jpg = MunchyDataFiles\Images\denver_omelet.jpg
+		MunchyDataFiles\Images\fish_sticks.jpg = MunchyDataFiles\Images\fish_sticks.jpg
+		MunchyDataFiles\Images\potato_pancake.png = MunchyDataFiles\Images\potato_pancake.png
 	EndProjectSection
 EndProject
 Global
@@ -50,6 +64,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFFD6649-E18A-4EAD-8D0B-92105A314826} = {53BE7946-0C15-4331-A614-1F60ACAD68DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3B12954E-52BD-4281-B375-7363BE89562E}
