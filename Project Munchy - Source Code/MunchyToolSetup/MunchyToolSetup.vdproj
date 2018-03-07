@@ -27,19 +27,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C53B6D17F81D839B278208F9614546C"
+        "MsmKey" = "8:_83295754B6DF421CAD78DC3320641743"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A2342A493D7E39D5DE703C66D4CFD2D7"
         "OwnerKey" = "8:_01507C2A5B1CD3E8833BCF62C2BD3DB1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C53B6D17F81D839B278208F9614546C"
+        "MsmKey" = "8:_A2342A493D7E39D5DE703C66D4CFD2D7"
         "OwnerKey" = "8:_83295754B6DF421CAD78DC3320641743"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_83295754B6DF421CAD78DC3320641743"
+        "MsmKey" = "8:_D696502AA1184EBEB23CE353D53996BD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7C53B6D17F81D839B278208F9614546C"
+        "OwnerKey" = "8:_A2342A493D7E39D5DE703C66D4CFD2D7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -130,6 +136,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -222,14 +236,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7C53B6D17F81D839B278208F9614546C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A2342A493D7E39D5DE703C66D4CFD2D7"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7C53B6D17F81D839B278208F9614546C"
+                    "_A2342A493D7E39D5DE703C66D4CFD2D7"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -251,6 +265,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D696502AA1184EBEB23CE353D53996BD"
+            {
+            "SourcePath" = "8:..\\MunchyDataFiles\\Images\\munchytoolicon_Kq4_icon.ico"
+            "TargetName" = "8:munchytoolicon_Kq4_icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F9938DADA5704C00840117BDA8FD0788"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FCF4AB4B01924C96A6BEDCAC0E5EE717"
@@ -461,7 +495,7 @@
             "Target" = "8:_83295754B6DF421CAD78DC3320641743"
             "Folder" = "8:_BC760F9C458040A3B72DCA58DFAD1EDC"
             "WorkingFolder" = "8:_F9938DADA5704C00840117BDA8FD0788"
-            "Icon" = "8:_FCF4AB4B01924C96A6BEDCAC0E5EE717"
+            "Icon" = "8:_D696502AA1184EBEB23CE353D53996BD"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D139693DED1149ADA07332DD450D0AAF"
@@ -475,7 +509,7 @@
             "Target" = "8:_83295754B6DF421CAD78DC3320641743"
             "Folder" = "8:_1F758FF7B9F648BE86043FA9E66B9356"
             "WorkingFolder" = "8:_F9938DADA5704C00840117BDA8FD0788"
-            "Icon" = "8:_FCF4AB4B01924C96A6BEDCAC0E5EE717"
+            "Icon" = "8:_D696502AA1184EBEB23CE353D53996BD"
             "Feature" = "8:"
             }
         }

@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{CFFD66
 		MunchyDataFiles\Images\corn_salad.png = MunchyDataFiles\Images\corn_salad.png
 		MunchyDataFiles\Images\denver_omelet.jpg = MunchyDataFiles\Images\denver_omelet.jpg
 		MunchyDataFiles\Images\fish_sticks.jpg = MunchyDataFiles\Images\fish_sticks.jpg
+		..\..\..\Icons\munchyiconv2.ico = ..\..\..\Icons\munchyiconv2.ico
+		..\..\..\Icons\munchytoolicon_Kq4_icon.ico = ..\..\..\Icons\munchytoolicon_Kq4_icon.ico
 		MunchyDataFiles\Images\potato_pancake.png = MunchyDataFiles\Images\potato_pancake.png
 	EndProjectSection
 EndProject
