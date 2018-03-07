@@ -1445,13 +1445,16 @@ namespace MunchyUI
             switch (m_FoodListToUse)
             {
                 case FoodListToUse.CompatibleRecipes:
-                    if (m_NumerOfRecipeToSuggest < m_SuggestedRecipeListBeingUsed.Count)
+                    if(m_SuggestedRecipeListBeingUsed != null)
                     {
-                        tB_RecipeName.FontSize = 24;
-                        m_NumerOfRecipeToSuggest++;
-                        SuggestRecipe();
-                        SetRecentlyViewedImages();
-                    }
+                        if (m_NumerOfRecipeToSuggest < m_SuggestedRecipeListBeingUsed.Count)
+                        {
+                            tB_RecipeName.FontSize = 24;
+                            m_NumerOfRecipeToSuggest++;
+                            SuggestRecipe();
+                            SetRecentlyViewedImages();
+                        }
+                    }                    
                     break;
                 case FoodListToUse.RecipesWithFridgeFoods:
                     if (m_NumerOfRecipesUserCanCook < m_CurrentManager.RecipieManag.RecipesWithFridgeFoods.Count)
