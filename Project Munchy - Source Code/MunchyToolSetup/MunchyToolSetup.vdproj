@@ -51,12 +51,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FCF4AB4B01924C96A6BEDCAC0E5EE717"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_83295754B6DF421CAD78DC3320641743"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_01507C2A5B1CD3E8833BCF62C2BD3DB1"
+        "OwnerKey" = "8:_1B35A19EF9EB554FAB099FF275B64282"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,7 +70,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1B35A19EF9EB554FAB099FF275B64282"
+        "OwnerKey" = "8:_01507C2A5B1CD3E8833BCF62C2BD3DB1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -181,11 +175,6 @@
             "AssemblyAsmDisplayName" = "8:MunchyAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_01507C2A5B1CD3E8833BCF62C2BD3DB1"
-                    {
-                    "Name" = "8:MunchyAPI.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MunchyAPI.dll"
             "TargetName" = "8:"
@@ -212,11 +201,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_1B35A19EF9EB554FAB099FF275B64282"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -243,11 +227,6 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A2342A493D7E39D5DE703C66D4CFD2D7"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -270,26 +249,6 @@
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D696502AA1184EBEB23CE353D53996BD"
             {
             "SourcePath" = "8:..\\MunchyDataFiles\\Images\\munchytoolicon_Kq4_icon.ico"
-            "TargetName" = "8:munchytoolicon_Kq4_icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_F9938DADA5704C00840117BDA8FD0788"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FCF4AB4B01924C96A6BEDCAC0E5EE717"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\Icons\\munchytoolicon_Kq4_icon.ico"
             "TargetName" = "8:munchytoolicon_Kq4_icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_F9938DADA5704C00840117BDA8FD0788"
