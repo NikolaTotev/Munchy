@@ -114,7 +114,7 @@
     "TimeTags": [ "breakfast", "lunch", "dinner" ],
     "UserTags": [ "isvegan", "isvegetarian", "isdiabetic", "eggs", "dairy", "fish", "nuts", "soy" ],
     "Units": ["Cup", "Cup", "Tbsp", "Cup" ],
-    "ImageFile": "tomato_salad.png",
+    "ImageFile": "corn_salad.png",
     "RecipeIndex": 0,
     "Calories": 305
   },
