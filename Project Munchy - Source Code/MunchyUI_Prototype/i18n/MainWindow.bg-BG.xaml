@@ -79,17 +79,17 @@
     <sys:String x:Key="SavedBTN">Запазени</sys:String>
     <sys:String x:Key="StatsTB">Статистики</sys:String>
     <sys:String x:Key="TotalCaloriesTB">Общо калории приети</sys:String>
-    <sys:String x:Key="AverageDailyCaloriesTB">Средни днвени калории</sys:String>
+    <sys:String x:Key="AverageDailyCaloriesTB">Средни днeвени калории</sys:String>
     <sys:String x:Key="AverageMonthlyCaloriesTB">Средни месечни калории</sys:String>
     <sys:String x:Key="RecipesCookedTB">Сготвени рецепти</sys:String>
     <sys:String x:Key="RecipesSeenTB">Видяни рецепти</sys:String>
-    <sys:String x:Key="DoubleClickOnRecipePrompt">Кликнете два пъти за да отворите рецептата.</sys:String>
+    <sys:String x:Key="DoubleClickOnRecipePrompt">Кликнете два пъти, за да отворите рецептата.</sys:String>
 
 
     <sys:String x:Key="IngredientListIngredients">Съставки</sys:String>
     <sys:String x:Key="IngredientListAmounts">Количество</sys:String>
 
-    <sys:String x:Key="FridgeToolTip">Тук ще намерите храните които скоро сте добавили.</sys:String>
+    <sys:String x:Key="FridgeToolTip">Тук ще намерите храните, които скоро сте добавили.</sys:String>
     <sys:String x:Key="BTNShowFridgeToolTip">Натиснете тук за да отворите хладилника.</sys:String>
     <sys:String x:Key="BTNShowRecipeToolTip">Натиснете тук за да отворите рецептата.</sys:String>
     <sys:String x:Key="BTNShowRecentlyViewedToolTip">Натиснете тук за да видите кои рецепти сте запазили.</sys:String>

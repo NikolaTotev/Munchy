@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_271D4A9F84B44DA585B08983EB77FA2E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3F3B7AD95FEE4EBAADC40EA308ED897B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -111,12 +117,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DCFFF01178BC401CA7637659609884A3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_E7D3090BB3453DFC96B89D54A62CC8C4"
         "OwnerKey" = "8:_6B70BF0F55294E9CA2CB1466922B697E"
         "MsmSig" = "8:_UNDEFINED"
@@ -130,7 +130,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E7D3090BB3453DFC96B89D54A62CC8C4"
+        "OwnerKey" = "8:_AAD0C2BBCC729E1F856B0D0620F236D6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AAD0C2BBCC729E1F856B0D0620F236D6"
+        "OwnerKey" = "8:_E7D3090BB3453DFC96B89D54A62CC8C4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -264,6 +264,26 @@
             {
             "SourcePath" = "8:..\\MunchyDataFiles\\Images\\fish_sticks.jpg"
             "TargetName" = "8:fish_sticks.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_271D4A9F84B44DA585B08983EB77FA2E"
+            {
+            "SourcePath" = "8:..\\MunchyDataFiles\\Images\\corn_salad.png"
+            "TargetName" = "8:corn_salad.png"
             "Tag" = "8:"
             "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
@@ -518,26 +538,6 @@
             "TargetName" = "8:Recipes.json"
             "Tag" = "8:"
             "Folder" = "8:_2CF9BEA0958E468BA829A65D0137869F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DCFFF01178BC401CA7637659609884A3"
-            {
-            "SourcePath" = "8:..\\MunchyDataFiles\\Images\\corn_salad.png"
-            "TargetName" = "8:corn_salad.png"
-            "Tag" = "8:"
-            "Folder" = "8:_01F92EE95A804B04BD83BD537DFB2DEE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

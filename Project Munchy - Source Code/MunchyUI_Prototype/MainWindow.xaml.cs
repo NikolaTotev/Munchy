@@ -1247,12 +1247,11 @@ namespace MunchyUI
                 Localizer.SwitchLanguage(this, "bg-BG");
             }
 
-            if (CB_English.IsChecked == true)
-            {
-                m_ActiveLanguage = Languages.English;
-                m_CurrentManager.User.LanguagePref = "US";
-                Localizer.SwitchLanguage(this, "en-US");
-            }
+            tb_FoodSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+            tb_SearchSavedRecipes.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+            tb_SearchCookedRecipes.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+            Tb_AddToShoppingListSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
+            l_SearchInfo.Text = TranslatorCore.GetTypeForFoodPrompt(m_ActiveLanguage);
 
             foreach (CheckBox element in m_SettingOptions)
             {
@@ -1413,6 +1412,7 @@ namespace MunchyUI
             }
             else
             {
+                Img_SuggestedRecipeImage.Fill = Brushes.White;                
                 tB_RecipeName.Text = null;
                 tB_RecipeName.FontSize = 18;
                 tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
@@ -1478,7 +1478,6 @@ namespace MunchyUI
         //Handles Showing previour recipe  to the user.
         private void Btn_ShowPreviousRecipe_Click(object sender, RoutedEventArgs e)
         {
-
             switch (m_FoodListToUse)
             {
                 case FoodListToUse.CompatibleRecipes:
