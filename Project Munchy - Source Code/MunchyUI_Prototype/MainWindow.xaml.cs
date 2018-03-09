@@ -1466,6 +1466,7 @@ namespace MunchyUI
                     }
                     else
                     {
+                        Img_SuggestedRecipeImage.Fill = Brushes.White;
                         tB_RecipeName.Text = null;
                         tB_RecipeName.FontSize = 18;
                         tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
@@ -1498,6 +1499,7 @@ namespace MunchyUI
                     }
                     else
                     {
+                        Img_SuggestedRecipeImage.Fill = Brushes.White;
                         tB_RecipeName.Text = null;
                         tB_RecipeName.FontSize = 18;
                         tB_RecipeName.Text = TranslatorCore.GetNoRecipesThatUserCanCookMsg(m_ActiveLanguage);
