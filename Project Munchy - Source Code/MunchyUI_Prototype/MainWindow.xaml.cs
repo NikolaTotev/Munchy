@@ -395,6 +395,7 @@ namespace MunchyUI
             {
                 Tb_IngrMessageTitle.Foreground = Brushes.Green;
                 Tb_IngrMessageTitle.Text = TranslatorCore.GetMessageTitleForAllIngrPresent(m_ActiveLanguage);
+                Tb_IngrMessageContents.Text = null;
             }
             else
             {
