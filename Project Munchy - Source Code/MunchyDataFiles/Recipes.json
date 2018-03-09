@@ -10,7 +10,7 @@
     "BGIngredients": [ "масло", "яйца", "чедар", "пушена шунка", "лук", "чушка" ],
     "Amounts": [ 1.0, 0.5, 0.25, 0.25, 1.0, 3.0 ],
     "TimeTags": [ "breakfast", "lunch", "dinner" ],
-    "UserTags": [ "fish", "nuts", "gluten", "soy", "isvegetarian", "eggs" ],
+    "UserTags": [ "fish", "nuts", "gluten", "soy"],
     "Units": [ "Tbsp", "Count", "Cup", "Cup", "Cup", "Cup" ],
     "ImageFile": "denver_omelet.jpg",
     "RecipeIndex": 0,
