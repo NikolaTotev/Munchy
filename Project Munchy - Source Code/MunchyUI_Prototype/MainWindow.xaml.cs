@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Nikola.Munchy.MunchyAPI;
 using System.IO;
+using System.Windows.Media.Animation;
+
 namespace MunchyUI
 {
     public enum Languages
@@ -1352,10 +1354,35 @@ namespace MunchyUI
             Tb_AddToShoppingListSearch.Text = TranslatorCore.GetTextboxDefaultText(m_ActiveLanguage);
         }
 
+        bool foodAmountPanelOpened = false;
         //Handles adding items to fridge.
         private void AddClickedItem(object sender, SelectionChangedEventArgs e)
         {
+            if (!foodAmountPanelOpened)
+            {
+                Storyboard foodAmountPanelSb = (Storyboard)P_AddFoodAmount.FindResource("OpenFoodAmountPanel");
+                foodAmountPanelSb.Begin();
+                foodAmountPanelOpened = true;
+            }
+
             ConfigureClickedItem();
+        }
+
+        //Closes the food searcher, and runs the animations.
+        private void btn_CloseFoodItemPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Storyboard foodSearchSb = (Storyboard)p_AddFoodItemPanel.FindResource("CloseFoodSearch");
+            foodSearchSb.Begin();
+
+
+            foodAmountPanelOpened = false;
+            Storyboard foodAmountPanelSb = (Storyboard)P_AddFoodAmount.FindResource("OpenFoodAmountPanel");
+            foodAmountPanelSb.Stop();
+        }
+
+        private void btn_CloseFoodItemPanelForFoods_Click(object sender, MouseButtonEventArgs e)
+        {
+            btn_CloseFoodItemPanel_Click(sender, e);
         }
 
         //Handles searching for fooditems. Function called everytime the text in the FoodSearch textbox is chang ed.
@@ -1807,6 +1834,6 @@ namespace MunchyUI
                     }
             }
         }
-        #endregion       
+        #endregion
     }
 }

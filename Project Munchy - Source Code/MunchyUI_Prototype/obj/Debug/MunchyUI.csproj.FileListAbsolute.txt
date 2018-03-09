@@ -42,3 +42,25 @@ D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyUI_Pro
 D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.csproj.CoreCompileInputs.cache
 D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.exe
 D:\Desktop\Software Engineering\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.pdb
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.csprojResolveAssemblyReference.cache
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.exe
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.pdb
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\i18n\MainWindow.en-US.xaml
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\i18n\MainWindow.bg-BG.xaml
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\MunchyUI.exe.config
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\MunchyUI.exe
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\MunchyUI.pdb
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\MunchyAPI.dll
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\Newtonsoft.Json.dll
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\MunchyAPI.pdb
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\bin\Debug\Newtonsoft.Json.xml
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MainWindow.g.cs
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\App.g.cs
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI_Content.g.cs
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI_MarkupCompile.cache
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI_MarkupCompile.lref
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MainWindow.baml
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.g.resources
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.Properties.Resources.resources
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.csproj.GenerateResource.Cache
+A:\HelpRepo\Munchy\Project Munchy - Source Code\MunchyUI_Prototype\obj\Debug\MunchyUI.csproj.CoreCompileInputs.cache
