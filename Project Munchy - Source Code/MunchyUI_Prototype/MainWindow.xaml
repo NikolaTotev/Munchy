@@ -1033,7 +1033,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                        <ImageBrush ImageSource="Images/ic_close_black_512dp_2x.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock x:Name="tB_SettingsTitle" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=SettingsTextBlock}" VerticalAlignment="Top" Width="551" FontSize="48" FontFamily="Shrikhand" TextAlignment="Center" Foreground="#FF5E6973" Margin="199,2,0,0" Grid.ColumnSpan="2"/>
@@ -1128,9 +1128,9 @@
                     <TextBox x:Name="tb_SearchCookedRecipes" Height="32" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Margin="10,10,12,0" FontFamily="Roboto Black" Background="White" SelectionBrush="#7F4392F1" BorderBrush="#FF5E6973" Foreground="#FF5E6973" TextAlignment="Center" FontSize="22" TextChanged="CookedRecipesTextChanged" GotFocus="SearchCookedRecipesFocused" LostFocus="SearchCookedRecipesLostFocus" Width="285"/>
                     <ListBox x:Name="lb_ListOfCookedRecipes" HorizontalAlignment="Left" Height="364" Margin="10,50,0,0" VerticalAlignment="Top" Width="285" FontSize="20" FontFamily="Roboto Black" BorderBrush="#FF5E6973" Foreground="#FF5E6973" SelectionChanged="CookedRecipeClicked"/>
                 </Grid>
-                <Rectangle x:Name="Btn_CloseSavedRecipePanel" HorizontalAlignment="Left" Height="45" Margin="865,10,0,0" VerticalAlignment="Top" Width="49" Opacity="0.5">
+                <Rectangle x:Name="Btn_CloseSavedRecipePanel" HorizontalAlignment="Left" Height="45" Margin="867,10,0,0" VerticalAlignment="Top" Width="47" Opacity="0.5">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                        <ImageBrush ImageSource="Images/ic_close_black_512dp_2x.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock x:Name="Warning_Label" HorizontalAlignment="Left" Height="61" Margin="627,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" FontFamily="Roboto Black" FontSize="14" Foreground="#FFF24333" TextAlignment="Center"/>
@@ -1160,7 +1160,7 @@
                 <Ellipse x:Name="img_RecipeImage" HorizontalAlignment="Left" Height="83" Margin="97,10,0,0" Stroke="#FF5E6973" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.5,0.5"/>
                 <TextBlock x:Name="tB_IngredientsTitle" HorizontalAlignment="Left" Height="30" Margin="97,103,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=IngredientsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center" RenderTransformOrigin="0.058,0.561"/>
                 <TextBlock x:Name="tB_DirectionsTitle" HorizontalAlignment="Left" Height="30" Margin="559,108,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DirectionsTextBlock}" VerticalAlignment="Top" Width="125" FontFamily="Roboto Black" FontSize="22" Foreground="#FF5E6973" TextAlignment="Center"/>
-                <Rectangle x:Name="btn_CloseRecipeView" HorizontalAlignment="Left" Height="40" Margin="870,10,0,0" VerticalAlignment="Top" Width="44" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                <Rectangle x:Name="btn_CloseRecipeView" HorizontalAlignment="Left" Height="44" Margin="868,8,0,0" VerticalAlignment="Top" Width="44" Opacity="0.5" RenderTransformOrigin="0.5,0.5">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -1170,7 +1170,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                        <ImageBrush ImageSource="Images/ic_close_black_512dp_2x.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <ListView x:Name="lv_Ingredients" HorizontalAlignment="Left" Height="319" Margin="12,138,0,0" VerticalAlignment="Top" Width="300" FontFamily="Roboto Medium" FontSize="18" Background="White" BorderBrush="#FF5E6973" Foreground="#FF5E6973">
@@ -1279,12 +1279,12 @@
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="-180"/>
+                            <RotateTransform Angle="-180.071"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="ic_navigate_before_black_48dp_2x.png"/>
+                        <ImageBrush ImageSource="Images/ic_close_black_512dp_2x.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <Button x:Name="Btn_RemoveItem" Content="{DynamicResource ResourceKey=RemoveButton}" HorizontalAlignment="Left" Height="39" Margin="455,440,0,0" VerticalAlignment="Top" Width="157" Background="#FF4392F1" FontFamily="Roboto Black" BorderBrush="{x:Null}" Foreground="#FFF7F4F3" FontSize="24" Click="Btn_RemoveItem_Click"/>
@@ -1377,7 +1377,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Grid x:Name="grid" HorizontalAlignment="Left" Height="53" Margin="-262,3,0,0" VerticalAlignment="Top" Width="174" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+            <Grid x:Name="grid" HorizontalAlignment="Left" Height="53" Margin="-258,3,0,0" VerticalAlignment="Top" Width="174" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
                 <Grid.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1404,7 +1404,7 @@
                                             <Grid>
                                                 <Image
                                             x:Name="buttonImage"
-                                            Source="Images/ic_navigate_before_white_48dp_2x.png"
+                                            Source="Images/ic_close_white_512dp_2x.png"
                                             Stretch="UniformToFill" />
                                                 <ContentPresenter
                                             Margin="{TemplateBinding Padding}"
