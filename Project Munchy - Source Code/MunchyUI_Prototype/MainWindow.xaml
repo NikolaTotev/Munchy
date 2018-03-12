@@ -1122,7 +1122,7 @@
                 </Grid>
                 <Rectangle x:Name="Btn_CloseSavedRecipePanel" HorizontalAlignment="Left" Height="45" Margin="867,10,0,0" VerticalAlignment="Top" Width="47" Opacity="0.5">
                     <Rectangle.Fill>
-                        <ImageBrush ImageSource="Images/ic_close_black_512dp_2x.png"/>
+                        <ImageBrush ImageSource="Images/ic_arrow_back_black_48dp_2x.png"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock x:Name="Warning_Label" HorizontalAlignment="Left" Height="61" Margin="627,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" FontFamily="Roboto Black" FontSize="14" Foreground="#FFF24333" TextAlignment="Center"/>
@@ -1353,7 +1353,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Grid x:Name="grid" HorizontalAlignment="Left" Height="53" Margin="-258,3,0,0" VerticalAlignment="Top" Width="174" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
+            <Grid x:Name="grid" HorizontalAlignment="Left" Height="53" Margin="-257,3,0,0" VerticalAlignment="Top" Width="174" Background="#FF4392F1" RenderTransformOrigin="0.5,0.5">
                 <Grid.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
